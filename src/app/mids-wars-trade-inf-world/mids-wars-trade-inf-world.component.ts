@@ -786,7 +786,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
     // var files = ["us.json", "us-state-centroids.json"];
     // var files = ["map.geojson", "MIDLOCA_2.0.csv"];
-    var files = ["map.geojson", "MIDLOCA_2.0.csv", "directed_dyadic_war_lati_long_stateName.csv", "COW country codes_lati_long.csv", "Dyadic_COW_4.0_flow2_1870.json", "MIDLOCA_2.0_groupbycountbyyear.csv","directed_dyadic_war_lati_long_stateNamecountbyyear.csv"];
+    var files = ["map.geojson", "MIDLOCA_2.0.csv", "directed_dyadic_war_lati_long_stateName.csv", "COW country codes_lati_long.csv", "Dyadic_COW_4.0_flow2_1870.json", "MIDLOCA_2.0_groupbycountbyyear.csv", "directed_dyadic_war_lati_long_stateNamecountbyyear.csv"];
 
 
     var promises = [];
@@ -857,7 +857,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       // console.log(values[0]);
       // var colF = d3.scaleSequential(d3.interpolateOranges);
-    
+
       // var colF = d3.scaleSequential(d3.interpolateBlues);
       //U.S.A location data
       var worldmapPath = values[0]
@@ -877,21 +877,21 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       //   d3.select("#descen").style("background-color", "whitesmoke");
       //   d3.select(id).style("background-color", "lightblue");
       //   mode = id;
-  
-  
-  
+
+
+
       //   // //console.log(mode)
       // }
-  
+
       // function setNumCouMode(id) {
       //   d3.select("#res").style("background-color", "#FFFF66");
       //   d3.select("#all").style("background-color", "#FFFF66");
       //   d3.select("#top").style("background-color", "#FFFF66");
       //   d3.select("#bot").style("background-color", "#FFFF66");
-  
+
       //   d3.select(id).style("background-color", "#FF3366");
       //   modeSortMet = id;
-  
+
       //   // //console.log(modeSortMet)
       // }
 
@@ -916,7 +916,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       var xAxis;
 
       var dataset;
- 
+
       // var mode = "#ascend";
 
       // var modeSortMet = "#all";
@@ -930,8 +930,12 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
       var dataset = values[5];
+
+
       maxCountMids = d3.max(dataset, function (d: any) { return +d.countmids; });
 
+      var prvMids = 0;
+      var onceClick=0;
       // setMode("#alpha");
       // setNumCouMode("#res");
 
@@ -963,8 +967,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         .on('mouseover', function (this: any) {
           // console.log("hello!!!")
           var idString = "#" + this.id.toString();
-          var yearString=idString.replace(/\D/g, "");
-          
+          var yearString = idString.replace(/\D/g, "");
+
           idString = String(idString)
           console.log(idString)
 
@@ -1008,28 +1012,51 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         })
         .on('mouseout', function (this: any) {
           // d3.select('#tooltip-mid').classed('hidden', true);
-          var idString = "#" + this.id.toString()
-          idString = String(idString)
-          d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+          // console.log("mouseOut")
+          // console.log(prvMids)
+          // if (prvMids %2 == 0) {
+            var idString = "#" + this.id.toString()
+            idString = String(idString)
+            d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+            var idString = "#" + this.id.toString();
+            var yearString = idString.replace(/\D/g, "");
+
+            idString = String(idString)
+            // console.log(idString)
+
+
+
+            // var temp = values[1].filter(x => x.year == String(yearString))
+            // svg.selectAll(".mid").remove()
+            
+            
+            
+            
+            
+            // removedrawMIDs(temp)
+
+            // // d3.select('#card-name-bub1').html('Country Information');
+            // // d3.select('#card-desc-bub1').html('Mouse over bars for quick facts.<br/><br/><br/>');
+          // }
+        })
+        .on('click', function (this: any) {
+          // console.log("click")
           
-          
+          // if ((prvMids == 0) && (onceClick==0)) {
+          //   // console.log(prvMids)
+          //   prvMids = 1;
+          //   onceClick=1;
+          //   // console.log(prvMids)
+          // }
+          // if ((prvMids == 1) && (onceClick==0)) {
+          //   prvMids = 0;
+          //   onceClick=1;
+          // }
+          prvMids=prvMids+1
 
+        })
+        ;
 
-          var idString = "#" + this.id.toString();
-          var yearString=idString.replace(/\D/g, "");
-          
-          idString = String(idString)
-          console.log(idString)
-
-          
-
-          var temp = values[1].filter(x => x.year == String(yearString))
-
-          removedrawMIDs(temp)
-
-          // // d3.select('#card-name-bub1').html('Country Information');
-          // // d3.select('#card-desc-bub1').html('Mouse over bars for quick facts.<br/><br/><br/>');
-        });
       // .attr("class","midscountbar");
 
 
@@ -1042,7 +1069,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         .attr("id", "x-axis")
         .attr("class", "axis")
         .attr("transform", "translate(0," + heightMIDBar + ")")
-        // .call(xAxis);
+      // .call(xAxis);
 
       var yAxis: any = d3.axisLeft(this)
         .scale(y)
@@ -1051,7 +1078,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       svgmidsBar.append("g")
         .attr("id", "y-axis")
         .attr("class", "axis")
-        // .call(yAxis);
+      // .call(yAxis);
 
       svgmidsBar.append("text")
         .attr("x", - heightMIDBar / 2 + 800)
@@ -1080,137 +1107,138 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       // the bar chart about the number of countries which are doing war by year
       // console.log(values[6])
-      
+
       var svgWarBar = d3.select("#barchartWars").append("svg").attr("id", "midsBar")
-      .attr('width', widthMIDBar + margin.left + margin.right)
-      .attr('height', heightMIDBar + margin.top + margin.bottom)
-      .append('g')
-      .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+        .attr('width', widthMIDBar + margin.left + margin.right)
+        .attr('height', heightMIDBar + margin.top + margin.bottom)
+        .append('g')
+        .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
 
-    var x = d3.scaleBand();
-    var y = d3.scaleLinear();
+      var x = d3.scaleBand();
+      var y = d3.scaleLinear();
 
-    var xAxis;
-
-
-    // var mode = "#ascend";
-
-    // var modeSortMet = "#all";
-    // var datasetCop;
-
-    // var titleFirst;
-    // var titleSecond = "For Military Expenditure";
-    // var titleSort = "Alphabetical Order";
-
-    var maxCountWars;
+      var xAxis;
 
 
-    var datasetWar = values[6];
-    maxCountWars = d3.max(datasetWar, function (d: any) { return +d.countCouWars; });
+      // var mode = "#ascend";
 
-    // setMode("#alpha");
-    // setNumCouMode("#res");
+      // var modeSortMet = "#all";
+      // var datasetCop;
+
+      // var titleFirst;
+      // var titleSecond = "For Military Expenditure";
+      // var titleSort = "Alphabetical Order";
+
+      var maxCountWars;
 
 
-    // drawBars();
+      var datasetWar = values[6];
+      maxCountWars = d3.max(datasetWar, function (d: any) { return +d.countCouWars; });
 
-    x.domain(datasetWar.map(function (d) { return d.year; }))
-      .range([0, widthMIDBar])
-      .paddingInner(0.15);
+      // setMode("#alpha");
+      // setNumCouMode("#res");
 
-    y.domain([0, maxCountWars + 5])
-      .range([heightMIDBar, 0]);
 
-    // console.log(heightMIDBar)
+      // drawBars();
 
-    svgWarBar.selectAll(".bar")
-      .data(datasetWar, function (d: any) { return d.year; })
-      .enter()
-      .append("rect")
-      .attr("id", function (d: any) {
-        return "warscountbar" + d.year.toString();
-      })
-      .attr("class", "warscountbar")
-      .attr("x", function (d: any) { return x(d.year); })
-      .attr("y", function (d: any) { return y(d.countCouWars); })
-      .attr("width", x.bandwidth())
-      .attr("height", function (d: any) { return heightMIDBar - y(d.countCouWars); })
-      .attr("fill", "rgb(196, 50, 50)")
-      .on('mouseover', function (this: any) {
-        // console.log("hello!!!")
-        var idString = "#" + this.id.toString();
-        var yearString=idString.replace(/\D/g, "");
-        
-        idString = String(idString)
-        console.log(idString)
+      x.domain(datasetWar.map(function (d) { return d.year; }))
+        .range([0, widthMIDBar])
+        .paddingInner(0.15);
 
-        
+      y.domain([0, maxCountWars + 5])
+        .range([heightMIDBar, 0]);
 
-        d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
-        d3.select(idString).attr("fill", "steelblue");
+      // console.log(heightMIDBar)
 
-        
-        var temp = values[2].filter(x => x.year == String(yearString))
-        // console.log(temp)
-        // drawMIDs(temp)
-        drawWarsVer2(temp)
-       
+      svgWarBar.selectAll(".bar")
+        .data(datasetWar, function (d: any) { return d.year; })
+        .enter()
+        .append("rect")
+        .attr("id", function (d: any) {
+          return "warscountbar" + d.year.toString();
+        })
+        .attr("class", "warscountbar")
+        .attr("x", function (d: any) { return x(d.year); })
+        .attr("y", function (d: any) { return y(d.countCouWars); })
+        .attr("width", x.bandwidth())
+        .attr("height", function (d: any) { return heightMIDBar - y(d.countCouWars); })
+        .attr("fill", "steelblue")
+        .on('mouseover', function (this: any) {
+          // console.log("hello!!!")
+          var idString = "#" + this.id.toString();
+          var yearString = idString.replace(/\D/g, "");
 
-      })
-      .on('mouseout', function (this: any, d:any) {
-        // d3.select('#tooltip-mid').classed('hidden', true);
+          idString = String(idString)
+          console.log(idString)
 
 
 
+          d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+          d3.select(idString).attr("fill", "rgb(196, 50, 50)");
 
-        var idString = "#" + this.id.toString()
-        idString = String(idString)
-        d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
-        
-        var idString = "#" + this.id.toString();
-        var yearString=idString.replace(/\D/g, "");
 
-        var temp = values[2].filter(x => x.year == String(yearString))
-        // d3.select("#country").attr("fill", "white");
-        removeWarsVer2(temp)
+          var temp = values[2].filter(x => x.year == String(yearString))
+          // console.log(temp)
+          // drawMIDs(temp)
+          drawWarsVer2(temp)
 
-        // // d3.select('#card-name-bub1').html('Country Information');
-        // // d3.select('#card-desc-bub1').html('Mouse over bars for quick facts.<br/><br/><br/>');
-      });
-    // .attr("class","midscountbar");
+
+        })
+        .on('mouseout', function (this: any, d: any) {
+          // d3.select('#tooltip-mid').classed('hidden', true);
 
 
 
 
-    var xAxis: any = d3.axisBottom(this)
-      .scale(x)
+          var idString = "#" + this.id.toString()
+          idString = String(idString)
+          d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+
+          var idString = "#" + this.id.toString();
+          var yearString = idString.replace(/\D/g, "");
+
+          var temp = values[2].filter(x => x.year == String(yearString))
+
+          // d3.select("#country").attr("fill", "white");
+          removeWarsVer2(temp)
+
+          // // d3.select('#card-name-bub1').html('Country Information');
+          // // d3.select('#card-desc-bub1').html('Mouse over bars for quick facts.<br/><br/><br/>');
+        });
+      // .attr("class","midscountbar");
+
+
+
+
+      var xAxis: any = d3.axisBottom(this)
+        .scale(x)
 
       svgWarBar.append("g")
-      .attr("id", "x-axis")
-      .attr("class", "axis")
-      .attr("transform", "translate(0," + heightMIDBar + ")")
+        .attr("id", "x-axis")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + heightMIDBar + ")")
       // .call(xAxis);
 
-    var yAxis: any = d3.axisLeft(this)
-      .scale(y)
-    // .ticks(5, 'd');
+      var yAxis: any = d3.axisLeft(this)
+        .scale(y)
+      // .ticks(5, 'd');
 
-    svgWarBar.append("g")
-      .attr("id", "y-axis")
-      .attr("class", "axis")
+      svgWarBar.append("g")
+        .attr("id", "y-axis")
+        .attr("class", "axis")
       // .call(yAxis);
 
       svgWarBar.append("text")
-      .attr("x", - heightMIDBar / 2 + 800)
-      .attr("y", - margin.left + 30)
+        .attr("x", - heightMIDBar / 2 + 800)
+        .attr("y", - margin.left + 30)
 
-      .attr("transform", "rotate(-90)")
-      .attr('class', 'ylabel')
-      .append("tspan").text("Expenditure(% of GDP)")
-      // .append("tspan").text("-2")
-      .style("baseline-shift", "super")
-      .style("font-size", "0.7em");
+        .attr("transform", "rotate(-90)")
+        .attr('class', 'ylabel')
+        .append("tspan").text("Expenditure(% of GDP)")
+        // .append("tspan").text("-2")
+        .style("baseline-shift", "super")
+        .style("font-size", "0.7em");
 
 
 
@@ -1293,11 +1321,11 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         });
 
-      d3.select("#warsButton")
+      d3.select("#pills-wars-tab")
         .on("click", function () {
           // console.log("WARBUTTON")
           d3.selectAll(".mid").remove()
-          var temp = values[2].filter(x => x.year == String(warCount))
+          // var temp = values[2].filter(x => x.year == String(warCount))
           // drawWars(temp)
           // drawWarsVer2(temp, values[3])
         });
@@ -1313,13 +1341,13 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           //country name
           return d.properties.A3
         })
-        .attr("class","country")
+        .attr("class", "country")
         .attr("stroke", "gray")
         .attr("d", path)
 
         .on('mouseover', function (this: any, d: any) {
           var centr = path.centroid(d)
-          
+
 
           var tooltipSpan = document.getElementById('tooltip-mid');
 
@@ -1328,8 +1356,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               y = e.clientY;
             // console.log(x)
             // console.log(y)
-            tooltipSpan.style.top = (y-20) + 'px';
-            tooltipSpan.style.left = (x-55) + 'px';
+            tooltipSpan.style.top = (y - 20) + 'px';
+            tooltipSpan.style.left = (x - 55) + 'px';
           };
 
           d3.select('#tooltip-mid')
@@ -1573,8 +1601,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           var marker = projection([+d.midloc11_longitude, +d.midloc11_latitude])
           return marker[0]
         })
-        // .transition()
-        //   .duration(750)
+          // .transition()
+          //   .duration(750)
           // .delay(delay)
           .attr("cy", function (d: any) {
             var marker = projection([+d.midloc11_longitude, +d.midloc11_latitude])
@@ -1583,8 +1611,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .attr("r", 5)
           .attr("fill", "rgb(196, 50, 50)")
           .attr("class", "mid")
-          // .transition()
-          // .duration(300)
+        // .transition()
+        // .duration(300)
 
         // .attr("id", function (d: any) {
         //   var tempId = "conflict" + String(d.dispnum) +"re"
@@ -1665,8 +1693,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // console.log(expMilCountries)
 
         // DATA JOIN
-        var mids = svg.selectAll(".mid")
-          .data(data);
+        var mids = svg.selectAll(".mid").remove()
+        // .data(data);
 
         // console.log(mids)
 
@@ -1683,8 +1711,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           var marker = projection([+d.midloc11_longitude, +d.midloc11_latitude])
           return marker[0]
         })
-        // .transition()
-        //   .duration(750)
+          // .transition()
+          //   .duration(750)
           // .delay(delay)
           .attr("cy", function (d: any) {
             var marker = projection([+d.midloc11_longitude, +d.midloc11_latitude])
@@ -1693,8 +1721,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .attr("r", 5)
           .attr("fill", "white")
           .attr("class", "mid")
-          // .transition()
-          // .duration(300)
+        // .transition()
+        // .duration(300)
 
         // .attr("id", function (d: any) {
         //   var tempId = "conflict" + String(d.dispnum) +"re"
@@ -1733,26 +1761,26 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           // .ease("elastic")
           .duration(300);
 
-          // .on('mouseover', function (this: any, d: any) {
-          //   // console.log("I am on the text!!!!");
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString();
+        // .on('mouseover', function (this: any, d: any) {
+        //   // console.log("I am on the text!!!!");
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString();
 
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
-          //   d3.select(idString).attr("fill", "steelblue")
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+        //   d3.select(idString).attr("fill", "steelblue")
 
-          //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
-          //   d3.select(idString).attr("r", "5")
-          // })
-          // .on('mouseout', function (this: any) {
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString()
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
-          //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
+        //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
+        //   d3.select(idString).attr("r", "5")
+        // })
+        // .on('mouseout', function (this: any) {
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString()
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+        //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
 
-          // });
+        // });
 
 
         // EXIT.
@@ -1980,19 +2008,19 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .data(data)
 
         wars.attr("class", "warDyadicEach")
-          .attr("fill", function(d: any) {
+          .attr("fill", function (d: any) {
 
             // console.log("hello!")
             // var te=data.statea.toString()
             // console.log(te)
-            var coun='#'+d.stateAbbA.toString()
+            var coun = '#' + d.stateAbbA.toString()
             d3.select(coun).attr("fill", "steelblue");
             // var idString = "#" + this.id.toString();
             // idString = String(idString)
             // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
             // d3.select(idString).attr("fill", "steelblue");
             return "steelblue"
-          
+
           })
 
 
@@ -2000,13 +2028,13 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         wars.enter()
           .append("path")
           .attr("class", "warDyadicPath")
-          .attr("fill", function(this: any, d: any) {
+          .attr("fill", function (this: any, d: any) {
 
             // var te=dataS.statea.toString()
             // console.log("dataS")
             // console.log(d.stateAbbA)
             // console.log("hello!")
-            var coun='#'+d.stateAbbA.toString()
+            var coun = '#' + d.stateAbbA.toString()
             d3.select(coun).attr("fill", "steelblue");
             // console.log(d)
             // var idString = "#" + this.id.toString();
@@ -2014,32 +2042,32 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
             // d3.select(idString).attr("fill", "steelblue");
             return "steelblue"
-          
+
           });
-          // .on('mouseover', function (this: any, d: any) {
-          //   // console.log("I am on the text!!!!");
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString();
-          //   console.log("Here")
-          //   console.log(idString)
+        // .on('mouseover', function (this: any, d: any) {
+        //   // console.log("I am on the text!!!!");
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString();
+        //   console.log("Here")
+        //   console.log(idString)
 
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
-          //   d3.select(idString).attr("fill", "steelblue")
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+        //   d3.select(idString).attr("fill", "steelblue")
 
-          //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
-          //   d3.select(idString).attr("r", "5")
-          // })
-          // .on('mouseout', function (this: any) {
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString()
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
-          //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
+        //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
+        //   d3.select(idString).attr("r", "5")
+        // })
+        // .on('mouseout', function (this: any) {
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString()
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+        //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
 
-          // });
-          
-          
+        // });
+
+
 
         // EXIT.
         wars.exit()
@@ -2050,7 +2078,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
 
-        
+
 
 
 
@@ -2077,19 +2105,19 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .data(data)
 
         wars.attr("class", "warDyadicEach")
-          .attr("fill", function(d: any) {
+          .attr("fill", function (d: any) {
 
             // console.log("hello!")
             // var te=data.statea.toString()
             // console.log(te)
-            var coun='#'+d.stateAbbA.toString()
+            var coun = '#' + d.stateAbbA.toString()
             d3.select(coun).attr("fill", "white");
             // var idString = "#" + this.id.toString();
             // idString = String(idString)
             // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
             // d3.select(idString).attr("fill", "steelblue");
             return "white"
-          
+
           })
 
 
@@ -2097,13 +2125,13 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         wars.enter()
           .append("path")
           .attr("class", "warDyadicPath")
-          .attr("fill", function(this: any, d: any) {
+          .attr("fill", function (this: any, d: any) {
 
             // var te=dataS.statea.toString()
             // console.log("dataS")
             // console.log(d.stateAbbA)
             // console.log("hello!")
-            var coun='#'+d.stateAbbA.toString()
+            var coun = '#' + d.stateAbbA.toString()
             d3.select(coun).attr("fill", "white");
             // console.log(d)
             // var idString = "#" + this.id.toString();
@@ -2111,32 +2139,32 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
             // d3.select(idString).attr("fill", "steelblue");
             return "white"
-          
+
           });
-          // .on('mouseover', function (this: any, d: any) {
-          //   // console.log("I am on the text!!!!");
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString();
-          //   console.log("Here")
-          //   console.log(idString)
+        // .on('mouseover', function (this: any, d: any) {
+        //   // console.log("I am on the text!!!!");
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString();
+        //   console.log("Here")
+        //   console.log(idString)
 
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
-          //   d3.select(idString).attr("fill", "steelblue")
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+        //   d3.select(idString).attr("fill", "steelblue")
 
-          //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
-          //   d3.select(idString).attr("r", "5")
-          // })
-          // .on('mouseout', function (this: any) {
-          //   // console.log(this);
-          //   var idString = "#" + this.id.toString()
-          //   idString = String(idString)
-          //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
-          //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
+        //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
+        //   d3.select(idString).attr("r", "5")
+        // })
+        // .on('mouseout', function (this: any) {
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString()
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+        //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
 
-          // });
-          
-          
+        // });
+
+
 
         // EXIT.
         wars.exit()
