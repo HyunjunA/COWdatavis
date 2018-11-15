@@ -1,214 +1,89 @@
-# INF 554 Assignment 9
+# INF 554 Project
 
-## Provenance of dataset and Reference
-    The link of the military Expenditure data  and the link of reference are below.
+## Description
 
-- [Military Expenditure Dataset](http://data.un.org/Search.aspx?q=military+expenditure)
+Projects include the following deliverables:
 
-- [Reference](https://www.sipri.org/sites/default/files/2018-04/sipri_fs_1805_milex_2017.pdf)
+- Demonstration
+- Presentation
+- Paper
+- Video
 
-## The a9.html on USC SCF
+## Rubric
 
-- [Published a9.html on USC SCF](http://www-scf.usc.edu/~choi797/a9/index.html)
+### Development
 
-## The angular component location and file composition.
-    The geojson files and other json files are used for the maps. And angular.json, package.json, and package-lock.json are uploaded. 
-#### ![alt text](8-4-2.PNG) 
-    You can check each component in src/app. 
-#### ![alt text](00.PNG) 
+Include in `README.md` the following section right after the title:
 
-## How to run
-    1. Download the github file.
-    2. Run "npm install", in the folder.
-    3. Run "ng serve --open".
+```md
+## PROJECT SUMMARY
 
+### PROJECT INFORMATION
 
-## 0. Format your files and Load the JSON file.
-### For Choropleth Map
-    For the Choropleth Map, I need geojson and military expenditure file. I upload my geojson file in the repository.
+- Project title: <title>
+- Group name: <group-name>
+- Team names: [<member-name> (<member-USC-username>) ...]
 
-### Proportional Symbol Map
-    For this proportional symbol map like choropleth map, I need same kinds of files. 
+### PROJECT ARTIFACTS
 
-### Los Angeles County Map
-    For this Los Angeles County Map like choropleth map, I need geojson file and csv file.
+- [Demonstration URL](<demo-url>)
+- [Presentation PDF](<presentation-pdf-url>) and [transcript](<presentation-transcript-md-url>)
+- [Article](<article-pdf-url>) and [Overleaf URL](<overleaf-article-url>)
+- [YouTube video](<youtube-video-url>)
+```
 
+| Level | Description |
+| ------------- | ----------- |
+| Sophisticated | GIT is used well by all members of the team. Node.js, d3.js, Bootstrap and one of React, Angular, or Vue.js are well used. Project information set-up, deployment and code base (including presentation) is well documented in README. Project summary is well included in `README.md`. (4-5 pts). |
+| Competent | GIT is not well by all members of the team. Node.js, d3.js, Bootstrap and one of React, Angular, or Vue.js are not well used. Project information set-up, deployment and code base (including presentation) is not well documented in README. Project summary is not well included in `README.md`. |
+| Needs work | GIT is not used by all members of the team. Node.js, d3.js, Bootstrap and one of React, Angular, or Vue.js are not used. Project information set-up, deployment and code base (including presentation) are not documented in README. Project summary is not included in `README.md`. (0-1 pts). |
 
+### Demonstration
 
-## 1. Implementation the main page.
+| Level | Description |
+| ------------- | ----------- |
+| Sophisticated | Website works well. Layout is well thought, pages are well designed with a good story flow, forms are well adapted to the information, information displays are well formed and support well visual queries, color schemes are well chosen, axes are well formed. One or more d3 maps, responsive d3 charts, interactive d3 charts, d3 animated transitions and d3 layouts are included and work well. (4-5 pts). |
+| Competent | Website does not work well. Layout is not well thought, pages are not well designed with a good story flow, forms are not well adapted to the information, information displays are not well formed and do not support well visual queries, color schemes are not well chosen, axes are not well formed. One or more d3 maps, responsive d3 charts, interactive d3 charts, d3 animated transitions and d3 layouts are not included and or do not work well. (2-3 pts). |
+| Needs work | Website does not work. Layout is not thought, pages are not designed with a good story flow, forms are not adapted to the information, information displays are not formed and do not support visual queries, color schemes are not chosen, axes are not formed. One or more d3 maps, responsive d3 charts, interactive d3 charts, d3 animated transitions and d3 layouts are not included and or work. (0-1 pts). |
 
-    By using the bootstrap example code, I made main webpage. But in this case, the parts which are related to each chart are excluded, which means that in the app.component.html, there are not htmls codes which are related to each chart. (The html codes for each chart are located in each component folder.)  
+### Presentation
 
-   
-## 2. Implementation the Choropleth Map.
-#### ![alt text](10-1.PNG)
-### 2-1 Explanation about choro-world-map-in-mil-exp.component.html
-    For the Choropleth Map, you need to implement html code. The code is located in this choro-world-map-in-mil-exp.component.html. 
-### 2-2 Explanation about choro-world-map-in-mil-exp.component.ts
-#### About Choropleth Map
-    I implement js code in this file. Let's me explain my code in ts file. I select the svg with ID worldChor.
-#### ![alt text](10.PNG)   
-    As I said eariler, I need two files. one is geojson file, and another is the json file for military expenditure. 
-    In the military expenditure file, there are coorinate field(longitude and latitude). By using path.centroid with geojson file, we can calculate the centroid of each path. But these values are different with the official centroid of each country, because some countries have country subdivisions which is far from their main lands. For example, the centroid of USA is the red dot. But if I use path.centroid to get the centroid of USA, It is located in the middle of USA and Alaska, which is not true. Therefore, I wrote the official centroids of 10 countries in the file. 
-#### ![alt text](11.PNG)  
-    I use d3.scaleSequential(d3.interpolateBlues). The legend shows how color is related to the share of military expenditure. 
-#### ![alt text](12.PNG)  
-#### ![alt text](12-1.PNG)  
+Presentation__ students will present their projects to the class using the [PechaKucha](http://www.pechakucha.org) presentation format. PechaKucha is a simple presentation format where you show 20 images, each for 20 seconds. The images advance automatically and you talk along to the images. You cannot use bullets in any of your slides. The presentation will be created with [Sozi](http://sozi.baierouge.fr). Presentations should include the following:
 
-#### Load files
-    To load these two files, I use forEach function.
-#### ![alt text](13.PNG)  
+- Cover slide (used to start the presentation manually, not included in time) including title, group name, names and emails
+- Introduction leading with 10 words on what your visualization is about. Explain who is it addressed to, why it is interesting, original, useful.
+- Explain who did what.
+- Explain the data and topic as needed to understand the project.
+- Explain the research you have done, what others have done in the same topic, other topics that are relevant.
+- Explain how your work is original.
+- Explain your design process, rationale for the layout, story, choice of forms, how you optimized the visual queries and user interaction.
+- Highlight what you have built and with d3 (see Demonstration for a list of required d3 features to include) and other tools including Bootstrap and framework features you used.
+- Explain what you would have done differently.
 
-#### Draw world map
-    I use geoMercator function. By using the geojson file, I do projection. And then I draw the path using data join.
-#### ![alt text](13-1.PNG) 
+Use Markdown to create a transcript of your presentation in a file named `PRESENTATION_TRANSCRIPT.md`. Make sure to provide a link in the `README.md` as described in Development.
 
-#### Color with the share of military expenditure.
-    By using the json file about military expenditure and ID of each country, I color each country area. 
-#### ![alt text](13-2.PNG) 
+| Level | Description |
+| ------------- | ----------- |
+| Sophisticated | Project is well presented by all members of the team, addresses all the requirements well. (4-5 pts). |
+| Competent | Project is not well presented by all members of the team, does not addresses all the requirements well. (2-3 pts). |
+| Needs work | Project is not presented by all members of the team, does not addresses all the requirements. (0-1 pts). |
 
-#### Draw centroid of each country.
-    By using the json file about military expenditure, I draw the centroid. But when you draw it, you must need to project the longitude and latitude. 
-#### ![alt text](13-3.PNG) 
+### Paper
 
-#### Make labels for each country.
-    Based on the projected longitude and latitude value, I draw the lines and country name. 
-#### ![alt text](13-4.PNG) 
+Students should write a final paper about the project as if they were submitting it to a conference for publication. The papers should be written in the [LNCS format](http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0) and should be at most 5 pages long. The paper should be organized as a publication, with sections for the introduction, data, approach (including design and technical considerations and development and evaluation), system, related work, conclusions and references. Each article should be clearly written using concise language. Using [Overleaf](https://www.overleaf.com/) is required for writing the paper. Optionally, the paper can also be linked in the website.
 
+| Level | Description |
+| ------------- | ----------- |
+| Sophisticated | Article is well written and organized, figures and tables are well formed, presents all important project information well. (4-5 pts). |
+| Competent | Article is not well written and organized, figures and tables are not well formed, does not present all important project information well. (2-3 pts). |
+| Needs work | Article is not fully written, is not organized, figures and tables are not formed, does not present all important project information. (0-1 pts). |
 
+### Video
 
-## 3. Implementation the Proportional Symbol Map.
-#### ![alt text](001.PNG)
-    In this proportional symbol map, most explanation is same to what I explained in the Choropleth Map.  
-### 3-1 Explanation about propo-world-map-in-mil-exp.component.html
-    For the Proportional Symbol Map, you need to implement html code. The code is located in this propo-world-map-in-mil-exp.component.html. 
-### 3-2 Explanation about propo-world-map-in-mil-exp.component.ts
-#### About Proportional Symbol Map
-    I implement js code in this file. Let's me explain my code in ts file. I select the svg with ID worldProp.
-#### ![alt text](10.PNG)   
- 
-#### Load files
-    To load these two files, I use forEach function.
-#### ![alt text](13.PNG)  
+Students should produce a 5-minute (or less) video of their demo and upload it to YouTube. The video should present the most important aspects of the project and demonstrate the most important features. Optionally, the video can be integrated in the website.
 
-#### Draw world map
-    I use geoMercator function. By using the geojson file, I do projection. And then I draw the path using data join.
-#### ![alt text](13-1.PNG) 
-
-#### Draw circle, based on the military expenditure share of each country.
-    By using the json file about military expenditure, I draw the circle in the centroid of each country. But when you draw it, you must need to project the longitude and latitude. 
-#### ![alt text](313-3.PNG) 
-
-#### Make labels and legend for each country.
-    Based on the projected longitude and latitude value, I draw the lines and country name. 
-#### ![alt text](313-4.PNG) 
-
-
-## 4. Implementation the LA county Map.
-#### ![alt text](102.PNG)
-    In this map, I exclude the explanation about "Unincoporated Areas".
-- [Unincoporated Areas in LA county](https://www.lacounty.gov/government/about-la-county/unincorporated-areas/)
-
-### 4-1 Explanation about choro-lacounty-map-in-popu.component.html
-    For the Choropleth Map, you need to implement html code. The code is located in this choro-lacounty-map-in-popu.component.html. 
-### 4-2 Explanation about choro-lacounty-map-in-popu.component.ts
-#### About Choropleth Map
-    I implement js code in this file. Let's me explain my code in ts file. I select the svg with ID laCountyChor.
-#### ![alt text](410.PNG)   
-    I use d3.shemeBlues and d3.scaleThreshold function. The legend shows how color is related to population in each city of LA county.  
-#### ![alt text](412.PNG)  
-#### ![alt text](412-1.PNG) 
-#### ![alt text](412-2.PNG)
-
-#### Load files
-    To load these two files, I use forEach function. But in this case, one is json file and another is csv file. So I need two kinds of function to load the files, which are d3.json and d3.csv.
-#### ![alt text](413.PNG)  
-
-#### Draw LA county map 
-    I use geoMercator function. By using the geojson file, I do projection. And then I draw the path using data join.
-#### ![alt text](413-1.PNG) 
-
-#### Color with population
-    By using the csv file and the city names, I color cities. In the csv, Total means population. 
-#### ![alt text](413-1.PNG) 
-
-#### Draw centroid of each city.
-    By using the geojson file and path.centroid function, I draw the centroid. In my case, I want to show the cities where population is smaller than 10000. And I do not consider the unincoporated area.
-#### ![alt text](413-3.PNG) 
-
-#### Make labels for each city.
-    Based on the centroid, I draw the lines and country name. 
-#### ![alt text](413-4.PNG) 
-
-
-
-
-
-
-
-
-## 5. Setup the bootstrap and the angular
-    5-1 Install angular.
-#### ![alt text](8-1.PNG)
-    5-2 And then you can see the my-app folder.
-#### ![alt text](8-2.PNG)
-    5-3 change the directory to my-app and install bootstrap.
-#### ![alt text](8-3.PNG)
-    5-4 In the my-app, install jquery.
-#### ![alt text](8-4.PNG)
-    5-5 Edit this style and scripts in angular.json.
-#### ![alt text](8-4-1.PNG)
-    5-6 Edit app.component.ts.
-#### ![alt text](8-5.PNG)
-    5-7 Edit app.component.html.
-#### ![alt text](8-6.PNG)
-    5-8 Run ng generate component map and Edit them  
-
-### 4-10. Now you can check whether the angular works use the command line(ng serve --open).
-
-## 5. Deployment
-   5-1. Run ng build --base-href /~<username>/a9/
-#### ![alt text](6-1.PNG)
-   5-2. After running this file, you can see the dist file. Move the a9 file in the dist file under public_html. (If you do not know what is public_html, read how to publish the web page on USC SCF.)
-#### ![alt text](6-1-1.PNG)
-   5-3. You can enter this web page using the address. 
- #### ![alt text](6-1-4.PNG)   
-   5-3'. Or you can run "ng serve --open". And then you can see the pop up webpage.
-#### ![alt text](6-1-2.PNG) 
-#### ![alt text](6-1-3.PNG) 
-
-
-
-## Publish the web page on USC SCF.
-
-    1. make dircetory, name public_html.
-    2. change dircetory to public_html.
-    3. Upload your web page file.
-    4. change directory , named ..
-    5. Run this command line(chmod -R 755 public_html)
-    6. You can check your home page.
-    7. By using FileZilla, you can also upload your code. 
-    8. In filezilla, open the site manager.
-    9. And then write aludra.usc.edu into Host.
-    10. Write your user ID.
-#### ![alt text](6-2.PNG)
-    11. After connecting you can check the file directories in the server.
-#### ![alt text](6-3.PNG)
-    12. Install and set what professor explained in the 7th lecture note(From page 74 to page 80).
-    13. And then you can see the file, called node_modules. You should upload this file to the server. By using filezilla, I uploaded the file under the public_html.
-#### ![alt text](6-4.PNG)
-    14. Check setting of the directory.
-#### ![alt text](6-4-2.PNG)
-    15. Check your webpage on the server. 
-#### ![alt text](6-5.PNG)  
-#### ![alt text](6-6.PNG)   
-
-
-
-## 6. Use of GIT.
-    6-1. When you want to upload your file to github,write summary and click the commit to master on the Github Desktop. 
-#### ![alt text](7-1.PNG)
-    6-2. After commiting, click the push origin. 
-#### ![alt text](7-2.PNG)
-
-
+| Level | Description |
+| ------------- | ----------- |
+| Sophisticated | Video is well produced, presents the most important aspects of the project well and demonstrate the most important features well. (4-5 pts). |
+| Competent | Video is not well produced, does not present the most important aspects of the project well and does not demonstrate the most important features well. (2-3 pts). |
+| Needs work | Video is not well produced, does not present the most important aspects of the project and does not demonstrate the most important features. (0-1 pts). |
