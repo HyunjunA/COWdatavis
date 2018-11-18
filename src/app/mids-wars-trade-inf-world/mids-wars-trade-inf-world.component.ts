@@ -24,14 +24,18 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       height = +svg.attr("height");
 
     var files = [
-      "map.geojson",
+      // "map.geojson",
+      "map_COW.geojson",
       "MIDLOCA_2.0.csv",
-      "directed_dyadic_war_lati_long_stateName.csv",
+      // "directed_dyadic_war_lati_long_stateName.csv",
+      "directed_dyadic_war_lati_long_stateName_allYear.csv",
       "COW country codes_lati_long.csv",
       "Dyadic_COW_4.0_flow2_1870.json",
-      "MIDLOCA_2.0_groupbycountbyyear.csv",
-      "directed_dyadic_war_lati_long_stateNamecountbyyear.csv",
-      "Dyadic_COW_4.0_Processed.csv",
+      // "MIDLOCA_2.0_groupbycountbyyear.csv",
+      "MIDLOCA_2.0_groupbycountbyyear.csv__allYear.csv",
+      // "directed_dyadic_war_lati_long_stateNamecountbyyear.csv",
+      "directed_dyadic_war_lati_long_stateNamecountbyyearAll.csv",
+      "Dyadic_COW_4.0_Processed.csv",//trade dataset
       "Inter-StateWarsList-Ver2.csv",
       // "test.json"
     ];
@@ -521,23 +525,40 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             selectedWarYear = yearString
             var warSelected = values[2].filter(x => x.year == String(selectedWarYear))
 
-            console.log(warSelected)
-            var warTitleAndCountry = describeWarInf(warSelected, values[8])
+            // console.log(warSelected)
+            var warTitleAndCountry = describeMajorWarInfForEachWar(warSelected, values[8])
+
+            // console.log(warTitleCounList)
+
+            var warTitleAndCountryAll = describeWarInf(warSelected, values[8])
             // console.log(warTitleAndCountry[0])
-            var warTitleArr = Array.from(warTitleAndCountry[0]);
-            var countryAtWar = Array.from(warTitleAndCountry[1]);
+            var warTitleArr = warTitleAndCountry[0];
+            // console.log(warTitleArr)
+            var countryAtWar = warTitleAndCountry[1];
+
+            var warTitleArrAll = Array.from(warTitleAndCountryAll[0]);
+            // console.log(warTitleArr)
+            var countryAtWarAll = Array.from(warTitleAndCountryAll[1]);
+            // console.log(countryAtWar)
             // var iterator1 = warTitle.values();
-            d3.select('#card-desc-war').html(String(warTitleArr) + "<br>" + "Countries at Wars" + ":" + String(countryAtWar))
+            d3.select('#card-desc-war').html(String(warTitleArrAll) + "<br>" + "Countries at Wars" + ":" + String(countryAtWarAll))
             // values[2]
+
+
+
+
 
             var st;
             // for (st=1)
             // for (st = 0; st < warTitleArr.length; st++) {
             // for (st = 0; st < warTitleArr.length; st++) {
             for (st = 0; st < 1; st++) {
-              var charPart = warTitleArr[st].replace(/\d/g, "");
+              // var charPart = warTitleArr[st].replace(/\d/g, "");
+              var charPart = warTitleArr.replace(/\d/g, "");
               var charPart = charPart.replace(/\-/g, ' ');
-              var yearPart = warTitleArr[st].replace(/[^\d.-]/g, "");
+              console.log(charPart)
+              // var yearPart = warTitleArr[st].replace(/[^\d.-]/g, "");
+              var yearPart = warTitleArr.replace(/[^\d.-]/g, "");
 
               if (yearPart[0] == '-') {
                 // yearPart.shift(); 
@@ -642,7 +663,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 svg.append("text")
                   .attr("id", "WarMajorOnMap")
                   .attr("x", 0)
-                  .attr("y", 350)
+                  .attr("y", 330)
                   .attr("font-size", '35px')
                   .attr("font-weight", "bold")
                 // .text("Major War");
@@ -680,15 +701,15 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 svg.append("text")
                   .attr("id", "WarTitleOnMap")
                   .attr("x", 0)
-                  .attr("y", 380)
-                  .attr("font-size", '25px')
+                  .attr("y", 360)
+                  .attr("font-size", '22px')
                   .attr("font-weight", "bold")
                 // .text(String(warTitleArr[0]));
 
                 svg.append("text")
                   .attr("id", "WarYearOnMap")
                   .attr("x", 0)
-                  .attr("y", 400)
+                  .attr("y", 380)
                   .attr("font-size", '18px')
                   .attr("font-weight", "bold");
 
@@ -847,6 +868,12 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 //   if(d3.select(refixcoID[i]).attr("fillX")!=null)
                 //   {
                 d3.select(String(refixcoID[i])).attr("fill", "#bdbdbd");
+
+                if (String(refixcoID[i])=="#AUH")
+                {
+                  d3.select("#AUS").attr("fill", "#bdbdbd");
+                  d3.select("#HUN").attr("fill", "#bdbdbd");
+                }
                 //   }
               }
             }
@@ -868,7 +895,16 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             var idString = "#" + this.id.toString()
             idString = String(idString)
+
+            console.log("mouseout")
+            console.log(idString)
             d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+
+            // if (idString=="#AUH")
+            // {
+            //   d3.select("#AUS").attr("fill", "#bdbdbd");
+            //   d3.select("#HUN").attr("fill", "#bdbdbd");
+            // }
 
             var idString = "#" + this.id.toString();
             var yearString = idString.replace(/\D/g, "");
@@ -1171,25 +1207,25 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
 
-          // .transition()
-          // .duration(1000)
-          // .style("fill", "red")
-          // .on("start", function transitionHeaderIn() {
+        // .transition()
+        // .duration(1000)
+        // .style("fill", "red")
+        // .on("start", function transitionHeaderIn() {
 
-          //   var t = d3.active(this)
-          //     .style("opacity", 0)
-          //     .remove();
-          //   // console.log(t)
+        //   var t = d3.active(this)
+        //     .style("opacity", 0)
+        //     .remove();
+        //   // console.log(t)
 
-          //   d3.select(".mid")
-          //     .style("opacity", 0)
-          //     // .text("Major War")
-          //     .transition(t)
-          //     .style("opacity", 1)
-          //     .attr("fill", "red")
-          //     .transition()
-          //     .delay(1000);
-          // })
+        //   d3.select(".mid")
+        //     .style("opacity", 0)
+        //     // .text("Major War")
+        //     .transition(t)
+        //     .style("opacity", 1)
+        //     .attr("fill", "red")
+        //     .transition()
+        //     .delay(1000);
+        // })
 
 
 
@@ -1364,6 +1400,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       }
 
+
       function drawWarsVer2(data: any) {
 
         // console.log(data)
@@ -1372,7 +1409,9 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         var areaId = 1;
         // console.log(data)
         // war Curve
-
+        refixcoID=[]
+        // console.log("draw color coutriy!!@#")
+        // console.log(data)
 
         // d3.select("#USA").attr("fill", "steelblue");
         var wars = svg.selectAll(".warDyadicEach")
@@ -1384,6 +1423,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // console.log("hello!")
             // var te=data.statea.toString()
             // console.log("hELLO")
+            console.log("inside")
+            console.log(d)
             var coun = '#' + d.stateAbbA.toString()
 
 
@@ -1400,8 +1441,9 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             return "steelblue"
 
           })
-
-
+          
+          console.log("refix")
+          // console.log(refixcoID)
 
         wars.enter()
           .append("path")
@@ -1412,13 +1454,30 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // console.log("dataS")
             // console.log(d.stateAbbA)
             // console.log("hello!")
+
+            console.log("inside")
+            console.log(d)
             var coun = '#' + d.stateAbbA.toString()
+            if (coun=='#AUH')
+            {
+              d3.select("#AUS").attr("fill", "steelblue");
+              // HUN
+              d3.select("#HUN").attr("fill", "steelblue");
+            }
+
+            if (coun=='#YUG')
+            {
+              d3.select("#AUS").attr("fill", "steelblue");
+              // HUN
+              d3.select("#HUN").attr("fill", "steelblue");
+            }
+
             d3.select(coun).attr("fill", "steelblue");
 
 
             refixcoID.push(coun)
 
-            console.log(refixcoID)
+            // console.log(refixcoID)
             // console.log(d)
             // var idString = "#" + this.id.toString();
             // idString = String(idString)
@@ -1695,15 +1754,18 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       }
 
       function describeWarInf(warInf: any, warList: any) {
-        // console.log(warInf)
+        console.log("warInf")
+        console.log(warInf)
 
         var warTitle = [];
         var countryWar = []
         var i;
         for (i = 0; i < warInf.length; i++) {
+
           var warNum = warInf[i].warnum
           countryWar.push(warInf[i].stateNameA)
           countryWar.push(warInf[i].stateNameB)
+
           // console.log("hello!!!")
           // console.log(warList)
           // console.log(warNum)
@@ -1724,6 +1786,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // console.log("warTitle")
         var warTitleset = new Set(warTitle);
         var counset = new Set(countryWar)
+        // var numCountryAtwar = countryWar
+
         // console.log(countryWar)
 
         var inform = [warTitleset, counset];
@@ -1734,6 +1798,147 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // console.log(set)
         return inform;
       }
+
+
+      function describeAllWarInfForEachWar(warInf: any, warList: any) {
+
+        var warTitle = [];
+        var countryWar = []
+        var i;
+        var tj;
+
+        var allWarNum = []
+        var len = 0;
+
+        var curnumC;
+
+        for (i = 0; i < warInf.length; i++) {
+
+          var warNum = warInf[i].warnum
+          allWarNum.push(warNum)
+
+        }
+
+
+        for (i = 0; i < allWarNum.length; i++) {
+
+          countryWar = []
+
+          for (tj = 0; tj < warInf.length; tj++) {
+
+            var warNum = warInf[tj].warnum
+            if (allWarNum[i] == warNum) {
+              countryWar.push(warInf[tj].stateNameA)
+              countryWar.push(warInf[tj].stateNameB)
+            }
+
+
+          }
+          var countryWarSet = new Set(countryWar)
+          var countryWarArray = new Array(countryWarSet)
+          curnumC = countryWarArray[0].size
+
+          if (len < curnumC) {
+            len = countryWarArray[0].size
+            var majorWarNum = allWarNum[i]
+
+          }
+
+        }
+
+        var tempWarList = warList.filter(x => String(x["War#"]) == String(majorWarNum))
+        
+
+        var WarTitleAndConList = new Array(tempWarList[0].Name, countryWarArray)
+
+        return WarTitleAndConList
+      }
+
+      function describeMajorWarInfForEachWar(warInf: any, warList: any) {
+        // console.log("describeWarInfForEachWar")
+        // console.log(warInf)
+
+        var warTitle = [];
+        var countryWar = []
+        var i;
+        var tj;
+
+        var allWarNum=[]
+        var len=0;
+
+        var curnumC;
+
+        for (i = 0; i < warInf.length; i++) {
+          
+          var warNum = warInf[i].warnum
+          allWarNum.push(warNum )
+
+        }
+
+
+        for (i = 0; i < allWarNum.length; i++) {
+          
+          // var warNum = allWarNum[i]
+
+          countryWar = []
+          
+          for (tj = 0; tj < warInf.length; tj++) {
+          
+            var warNum = warInf[tj].warnum
+            if (allWarNum[i]== warNum)
+            {
+              countryWar.push(warInf[tj].stateNameA)
+              countryWar.push(warInf[tj].stateNameB)  
+
+              // new Set(countryWar)
+              
+              
+            }
+
+
+        }
+        var countryWarSet=new Set(countryWar)
+        var countryWarArray=new Array(countryWarSet)
+        curnumC=countryWarArray[0].size
+        // console.log("warleng")
+        // console.log(allWarNum[i])
+        // console.log(countryWarArray[0].size)
+        if(len<curnumC)
+        {
+          len=countryWarArray[0].size
+          var majorWarNum=allWarNum[i]
+          // console.log(majorWarNum)
+          // console.log(countryWarArray.length)
+          
+        }
+
+      }
+
+      // console.log("majorWarNum")
+      // console.log(majorWarNum)
+      var tempWarList = warList.filter(x => String(x["War#"]) == String(majorWarNum))
+          // console.log("tempWarList")
+          // console.log(tempWarList[0].Name)
+
+          // var j;
+          // for (j = 0; j < tempWarList.length; j++) {
+          //   warTitle.push(tempWarList[j]["Name"])
+          // }
+
+      console.log(majorWarNum)
+      console.log(countryWarArray)
+    
+      var WarTitleAndConList = new Array(tempWarList[0].Name, countryWarArray)
+
+      console.log(WarTitleAndConList)
+
+      return WarTitleAndConList
+    }
+
+
+
+
+
 
       function drawMap(worldmap: any, countryNamCh: any) {
 
