@@ -12,6 +12,7 @@ import { ChoroLACountyMapInPopuComponent } from './choro-lacounty-map-in-popu/ch
 import { MidsworldmapComponent } from './midsworldmap/midsworldmap.component';
 import { WarworldmapComponent } from './warworldmap/warworldmap.component';
 import { MidsWarsTradeInfWorldComponent } from './mids-wars-trade-inf-world/mids-wars-trade-inf-world.component';
+import { PiechartComponent } from './piechart/piechart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MidsWarsTradeInfWorldComponent } from './mids-wars-trade-inf-world/mids
     ChoroLACountyMapInPopuComponent,
     MidsworldmapComponent,
     WarworldmapComponent,
-    MidsWarsTradeInfWorldComponent
+    MidsWarsTradeInfWorldComponent,
+    PiechartComponent
   ],
   imports: [
     BrowserModule

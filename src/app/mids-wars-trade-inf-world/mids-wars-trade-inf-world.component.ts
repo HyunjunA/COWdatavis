@@ -25,19 +25,20 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
     var files = [
       // "map.geojson",
-      "map_COW.geojson",
-      "MIDLOCA_2.0.csv",
+      "map_COW.geojson",//values[0]
+      "MIDLOCA_2.0.csv",//values[1]
       // "directed_dyadic_war_lati_long_stateName.csv",
-      "directed_dyadic_war_lati_long_stateName_allYear.csv",
-      "COW country codes_lati_long.csv",
-      "Dyadic_COW_4.0_flow2_1870.json",
+      "directed_dyadic_war_lati_long_stateName_allYear.csv",//values[2]
+      "COW country codes_lati_long.csv",//values[3]
+      "Dyadic_COW_4.0_flow2_1870.json",//values[4]
       // "MIDLOCA_2.0_groupbycountbyyear.csv",
-      "MIDLOCA_2.0_groupbycountbyyear.csv__allYear.csv",
+      "MIDLOCA_2.0_groupbycountbyyear.csv__allYear.csv",//values[5]
       // "directed_dyadic_war_lati_long_stateNamecountbyyear.csv",
       // "directed_dyadic_war_lati_long_stateNamecountbyyearAllVer2.csv",
-      "directed_dyadic_war_lati_long_stateNamecountbyyearAllVer3.csv",
-      "Dyadic_COW_4.0_Processed.csv",//trade dataset
-      "Inter-StateWarsList-Ver2.csv",
+      "directed_dyadic_war_lati_long_stateNamecountbyyearAllVer3.csv",//values[6]
+      // "Dyadic_COW_4.0_Processed.csv",//trade dataset //values[7],
+      "Dyadic_COW_4.0_Processed_WithCcode.csv", //trade dataset //values[7],
+      "Inter-StateWarsList-Ver2.csv",//values[8]
       // "test.json"
     ];
 
@@ -46,7 +47,6 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
     files.forEach(function (url) {
       var partsOfurl = url.split('.');
-
 
       if (partsOfurl[partsOfurl.length - 1] == "geojson" || partsOfurl[partsOfurl.length - 1] == "json") { promises.push(d3.json(url)) }
       if (partsOfurl[partsOfurl.length - 1] == "csv") { promises.push(d3.csv(url)) }
@@ -66,7 +66,12 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       var whcounNaLatLong = values[3];
 
+      var allCCodeOnmap=[];
 
+      var removeCoun=[];
+
+      d3.select('#tooltip-mid').classed('hidden', true);
+      d3.select('#tooltip-midInfor').classed('hidden', true);
 
       drawBasicInforOnMap()
 
@@ -95,7 +100,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       //MAP part
       d3.select('#tooltip-mid').classed('hidden', true);
-
+      d3.select('#tooltip-midInfor').classed('hidden', true);
       //South Korea
       // var projection = d3.geoMercator().fitSize([width, height], worldmapPath.features[40]);
       var projection = d3.geoMercator().fitSize([width, height], worldmapPath);
@@ -130,7 +135,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       //     d3.selectAll(".warDyadicPath").remove()
       //     var temp = values[1].filter(x => x.year == String(count))
-      //     drawMIDs(temp)
+      //     drawMIDsOnMap(temp)
 
       //   });
 
@@ -185,6 +190,123 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .transition()
                 .delay(100);
             });
+
+
+
+
+            d3.select("#WarMajorOnMap")
+            // .attr("absolute","absolute")
+            // .attr("top", "70px")
+            // .attr("right", "15px")
+            // .attr("y", 400)
+            .transition()
+            .duration(1000)
+            .style("color", "black")
+            .on("start", function transitionHeaderIn() {
+  
+              var t = d3.active(this)
+                .style("opacity", 0)
+                .remove();
+              // console.log(t)
+  
+              d3.select("#WarMajorOnMap")
+                .style("opacity", 0)
+                .text("Militarized Conflicts")
+                .transition(t)
+                .style("opacity", 1)
+                .style("color", "black")
+                .transition()
+                .delay(1000);
+            });
+
+
+            d3.select("#WarTitleOnMap")
+          // .attr("absolute","absolute")
+          // .attr("top", "70px")
+          // .attr("right", "15px")
+          // .attr("y", 400)
+          .transition()
+          .duration(1000)
+          .style("color", "black")
+          .on("start", function transitionHeaderIn() {
+
+            var t = d3.active(this)
+              .style("opacity", 0)
+              .remove();
+            // console.log(t)
+
+            d3.select("#WarTitleOnMap")
+              .style("opacity", 0)
+              .text("from 1816-2010")
+              .transition(t)
+              .style("opacity", 1)
+              .style("color", "black")
+              .transition()
+              .delay(1000);
+          });
+
+
+          d3.select("#WarYearOnMap")
+              // .attr("absolute","absolute")
+              // .attr("top", "70px")
+              // .attr("right", "15px")
+              // .attr("y", 400)
+              .transition()
+              .duration(1000)
+              .style("color", "black")
+              .on("start", function transitionHeaderIn() {
+
+                var t = d3.active(this)
+                  .style("opacity", 1)
+                  .remove();
+                // console.log(t)
+
+                d3.select("#WarYearOnMap")
+                  .style("opacity", 1)
+                  // .text(String(selectedMIDYear))
+                  // .text("#MIDs: " + MIDSelected[0].countmids)
+                  .transition(t)
+                  .style("opacity", 0)
+                  .style("color", "black")
+                  .transition()
+                  .delay(1000);
+              });
+
+
+              
+              d3.select("#forthInform")
+              // .attr("absolute","absolute")
+              // .attr("top", "70px")
+              // .attr("right", "15px")
+              // .attr("y", 400)
+              .transition()
+              .duration(1000)
+              .style("color", "black")
+              .on("start", function transitionHeaderIn() {
+
+                var t = d3.active(this)
+                  .style("opacity", 0)
+                  .remove();
+                // console.log(t)
+
+                d3.select("#forthInform")
+                  .style("opacity", 1)
+                  // .text(String(selectedMIDYear))
+                  // .text("#deaths: "+warSelectedBattDeath[0]['batdths'])
+                  // .text("#Countries at War Information: " +countryAtWar[0].size)
+                  // .text("Major war: "+String(charPart)+ yearString)
+                  .transition(t)
+                  .style("opacity", 0)
+                  .style("color", "black")
+                  .transition()
+                  .delay(1000);
+              });
+
+
+
+
+
+
           // var temp = values[2].filter(x => x.year == String(warCount))
           // drawWars(temp)
           // drawWarsVer2(temp, values[3])
@@ -390,6 +512,118 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .transition()
                 .delay(100);
             });
+
+
+
+            d3.select("#WarMajorOnMap")
+            // .attr("absolute","absolute")
+            // .attr("top", "70px")
+            // .attr("right", "15px")
+            // .attr("y", 400)
+            .transition()
+            .duration(1000)
+            .style("color", "black")
+            .on("start", function transitionHeaderIn() {
+  
+              var t = d3.active(this)
+                .style("opacity", 0)
+                .remove();
+              // console.log(t)
+  
+              d3.select("#WarMajorOnMap")
+                .style("opacity", 0)
+                .text("International Trade")
+                .transition(t)
+                .style("opacity", 1)
+                .style("color", "black")
+                .transition()
+                .delay(1000);
+            });
+
+
+            d3.select("#WarTitleOnMap")
+          // .attr("absolute","absolute")
+          // .attr("top", "70px")
+          // .attr("right", "15px")
+          // .attr("y", 400)
+          .transition()
+          .duration(1000)
+          .style("color", "black")
+          .on("start", function transitionHeaderIn() {
+
+            var t = d3.active(this)
+              .style("opacity", 0)
+              .remove();
+            // console.log(t)
+
+            d3.select("#WarTitleOnMap")
+              .style("opacity", 0)
+              .text("from 1870-2014")
+              .transition(t)
+              .style("opacity", 1)
+              .style("color", "black")
+              .transition()
+              .delay(1000);
+          });
+
+
+          d3.select("#WarYearOnMap")
+              // .attr("absolute","absolute")
+              // .attr("top", "70px")
+              // .attr("right", "15px")
+              // .attr("y", 400)
+              .transition()
+              .duration(1000)
+              .style("color", "black")
+              .on("start", function transitionHeaderIn() {
+
+                var t = d3.active(this)
+                  .style("opacity", 1)
+                  .remove();
+                // console.log(t)
+
+                d3.select("#WarYearOnMap")
+                  .style("opacity", 1)
+                  // .text(String(selectedMIDYear))
+                  // .text("#MIDs: " + MIDSelected[0].countmids)
+                  .transition(t)
+                  .style("opacity", 0)
+                  .style("color", "black")
+                  .transition()
+                  .delay(1000);
+              });
+
+
+              
+              d3.select("#forthInform")
+              // .attr("absolute","absolute")
+              // .attr("top", "70px")
+              // .attr("right", "15px")
+              // .attr("y", 400)
+              .transition()
+              .duration(1000)
+              .style("color", "black")
+              .on("start", function transitionHeaderIn() {
+
+                var t = d3.active(this)
+                  .style("opacity", 0)
+                  .remove();
+                // console.log(t)
+
+                d3.select("#forthInform")
+                  .style("opacity", 1)
+                  // .text(String(selectedMIDYear))
+                  // .text("#deaths: "+warSelectedBattDeath[0]['batdths'])
+                  // .text("#Countries at War Information: " +countryAtWar[0].size)
+                  // .text("Major war: "+String(charPart)+ yearString)
+                  .transition(t)
+                  .style("opacity", 0)
+                  .style("color", "black")
+                  .transition()
+                  .delay(1000);
+              });
+
+
           // var temp = values[2].filter(x => x.year == String(warCount))
           // drawWars(temp)
           // drawWarsVer2(temp, values[3])
@@ -758,7 +992,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             var temp = values[1].filter(x => x.year == String(yearString))
 
-            drawMIDs(temp)
+            drawMIDsOnMap(temp)
 
           })
           .on('mouseout', function (this: any) {
@@ -1078,32 +1312,6 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
 
-
-
-                // svg.append("text")
-                //   .attr("id", "WarTitleOnMap")
-                //   .attr("x", 0)
-                //   .attr("y", 360)
-                //   .attr("font-size", '22px')
-                //   .attr("font-weight", "bold")
-                // // .text(String(warTitleArr[0]));
-
-                // svg.append("text")
-                //   .attr("id", "WarYearOnMap")
-                //   .attr("x", 0)
-                //   .attr("y", 390)
-                //   .attr("font-size", '17px')
-                //   .attr("font-weight", "bold");
-
-
-                // svg.append("text")
-                //   .attr("id", "WarTitle2OnMap")
-                //   .attr("x", 0)
-                //   .attr("y", 420)
-                //   .attr("font-size", '25px')
-                //   .attr("font-weight", "bold")
-
-
                 testIn = testIn + 1
 
 
@@ -1292,7 +1500,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             var temp = values[2].filter(x => x.year == String(yearString))
             // console.log(temp)
-            // drawMIDs(temp)
+            // drawMIDsOnMap(temp)
 
             if (refixcoID.length != 0) {
               var i;
@@ -1319,6 +1527,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             // console.log("still")
             refixcoID = []
+            // console.log(temp)
             drawWarsVer2(temp)
 
 
@@ -1429,6 +1638,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // var titleSecond = "For Military Expenditure";
         // var titleSort = "Alphabetical Order";
 
+ 
+
         var maxCountWars;
 
 
@@ -1468,8 +1679,29 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .on('mouseover', function (this: any) {
             // console.log("hello!!!")
             var idString = "#" + this.id.toString();
-            var yearString = idString.replace(/\D/g, "");
 
+            // console.log(idString)
+            var yearString = idString.replace(/\D/g, "");
+            
+            // console.log(allCCodeOnmap)
+            if (removeCoun.length!=0)
+            {
+              // console.log(removeCoun)
+    
+              var rm;
+              for (rm=0;rm<removeCoun.length;rm++)
+              {
+                var tempId=removeCoun[rm];
+                d3.select(tempId).attr("fill", "#bdbdbd");
+                console.log(tempId)
+                if (tempId=="#CRO")
+                {
+                  console.log("CRO!!!!!!!!")
+                }
+
+              }
+            }
+            removeCoun=[]
 
             d3.select("#worldMidChartHiHead")
               .transition()
@@ -1500,10 +1732,193 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
             d3.select(idString).attr("fill", "rgb(196, 50, 50)");
 
+            // console.log( yearString)
+            var temp = values[7].filter(x => x.year == yearString)
+            // console.log(temp[0]["countryset"])
+            
+            var tempSen=temp[0]["countryset"]
 
-            var temp = values[2].filter(x => x.year == String(yearString))
-            // console.log(temp)
-            // drawMIDs(temp)
+            // var tempSenT = tempSen.replace(/\D/g, ",");
+
+            // // var tempSenT = parseInt(tempSen.replace(/[^0-9]/g, ''));
+
+            // console.log(tempSen)
+            tempSen = tempSen.replace(/[{}]/g, "");
+            var tempSenT = tempSen.split(/\s*,\s*/).map(Number);
+            // console.log(tempSenT)
+            // var tempSenT = tempSen.replace(/, +/g, ",").split(",").map(Number);  
+            // console.log(tempSenT)
+            var newArray = tempSenT.filter( value => !Number.isNaN(value) );
+            // console.log(newArray.length)
+            
+            // console.log(newArray)
+            // console.log(values[3])
+            
+            // // var elementPos = values[3].map(function(x) {return x.id; }).indexOf(idYourAreLookingFor);
+            // // var objectFound = array[elementPos];
+            var tempI;
+            for(tempI=0; tempI<newArray.length; tempI++)
+            { 
+              // console.log("loop")
+              var tempK = values[3].filter(x => x.CCode == String(newArray[tempI]))
+              // console.log(tempK[0].StateAbb)
+              // var idStringTemp = "#" + tempK[0].StateAbb.toString();
+              var yes=allCCodeOnmap.indexOf(tempK[0].StateAbb.toString())
+              // console.log(yes)
+
+              if (yes!=-1)
+              {  
+                // console.log("inside")
+                var idStringTemp = "#" + tempK[0].StateAbb.toString();
+
+                if (idStringTemp=="#CRO")
+                {
+                  console.log("CRO!!!!!!!!")
+                  d3.select(idStringTemp).attr("fill", "green");
+                }
+
+                removeCoun.push(idStringTemp)
+                d3.select(idStringTemp).attr("fillX", String(d3.select(idStringTemp).attr("fill")));
+                d3.select(idStringTemp).attr("fill", "rgb(196, 50, 50)");
+              }
+              // StateAbb: "NOR"
+            }
+            // drawMIDsOnMap(temp)  
+
+            // console.log(removeCoun)
+
+
+            d3.select("#WarMajorOnMap")
+                  // .attr("absolute","absolute")
+                  // .attr("top", "70px")
+                  // .attr("right", "15px")
+                  // .attr("y", 400)
+                  .transition()
+                  .duration(1000)
+                  .style("color", "black")
+                  .on("start", function transitionHeaderIn() {
+
+                    var t = d3.active(this)
+                      .style("opacity", 0)
+                      .remove();
+                    // console.log(t)
+
+                    d3.select("#WarMajorOnMap")
+                      .style("opacity", 0)
+                      .text("Trade Information")
+                      .transition(t)
+                      .style("opacity", 1)
+                      .style("color", "black")
+                      .transition()
+                      .delay(1000);
+                  });  
+
+
+
+
+
+            d3.select("#WarTitleOnMap")
+                  // .attr("absolute","absolute")
+                  // .attr("top", "70px")
+                  // .attr("right", "15px")
+                  // .attr("y", 400)
+                  .transition()
+                  .duration(1000)
+                  .style("color", "black")
+                  .on("start", function transitionHeaderIn() {
+
+                    var t = d3.active(this)
+                      .style("opacity", 0)
+                      .remove();
+                    // console.log(t)
+
+                    d3.select("#WarTitleOnMap")
+                      .style("opacity", 0)
+                      // .text(String(charPart))
+                      // warTitleAndCountryAdd
+                      .text("Number of Countries: "+String(temp[0]["numCountry"]))
+                      // .text("The number of relations: "+String(temp[0]["CountTradeRela"]))
+                      .transition(t)
+                      .style("opacity", 1)
+                      .style("color", "black")
+                      .transition()
+                      .delay(1000);
+                  });
+
+
+
+                d3.select("#WarYearOnMap")
+                  // .attr("absolute","absolute")
+                  // .attr("top", "70px")
+                  // .attr("right", "15px")
+                  // .attr("y", 400)
+                  .transition()
+                  .duration(1000)
+                  .style("color", "black")
+                  .on("start", function transitionHeaderIn() {
+
+                    var t = d3.active(this)
+                      .style("opacity", 0)
+                      .remove();
+                    // console.log(t)
+
+                    d3.select("#WarYearOnMap")
+                      .style("opacity", 0)
+                      // .text(String(sillyString))
+                      .text("The number of relations: "+String(temp[0]["CountTradeRela"]))
+                      // .text("The amount of total trade: "+String(temp[0]["SumTrade"]))
+                      .transition(t)
+                      .style("opacity", 1)
+                      .style("color", "black")
+                      .transition()
+                      .delay(1000);
+                  });
+
+
+                
+
+
+                d3.select("#forthInform")
+                  // .attr("absolute","absolute")
+                  // .attr("top", "70px")
+                  // .attr("right", "15px")
+                  // .attr("y", 400)
+                  .transition()
+                  .duration(1000)
+                  .style("color", "black")
+                  .on("start", function transitionHeaderIn() {
+
+                    var t = d3.active(this)
+                      .style("opacity", 0)
+                      .remove();
+                    // console.log(t)
+
+                    d3.select("#forthInform")
+                      .style("opacity", 0)
+                      // .text(String(selectedMIDYear))
+                      // .text("#deaths: "+warSelectedBattDeath[0]['batdths'])
+                      // .text("#Countries at War Information: " +countryAtWar[0].size)
+                      // .text("Number of Countries: "+String(temp[0]["numCountry"])+ yearString)
+                      // .text("Number of Countries: "+String(temp[0]["numCountry"]))
+                      // .text("The number of relations: "+String(temp[0]["CountTradeRela"]))
+                      .text("The amount of total trade: "+String(temp[0]["SumTrade"]))
+                      .transition(t)
+                      .style("opacity", 1)
+                      .style("color", "black")
+                      .transition()
+                      .delay(1000);
+                  });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1529,7 +1944,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             refixcoID = []
 
             refixcoID = []
-            drawWarsVer2(temp)
+            // drawWarsVer2(temp)
+            // drawWarsVer2withTrade(temp)
 
 
           })
@@ -1546,7 +1962,13 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             var idString = "#" + this.id.toString();
             var yearString = idString.replace(/\D/g, "");
 
-            var temp = values[2].filter(x => x.year == String(yearString))
+            // var temp = values[2].filter(x => x.year == String(yearString))
+
+            
+            // removeCoun.push(idStringTemp)
+            
+
+
 
             // d3.select("#country").attr("fill", "white");
 
@@ -1598,7 +2020,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       }
 
 
-      function drawMIDs(data: any) {
+      function drawMIDsOnMap(data: any) {
 
 
         // console.log(data)
@@ -1908,7 +2330,6 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             d3.select(coun).attr("fill", "steelblue");
 
-
             refixcoID.push(coun)
 
             // console.log(refixcoID)
@@ -2112,7 +2533,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // .html('<h4>' + "Country: " + "South Korea" + '</h4>' + 'Expenditure: ' + "100000"+' % of GDP<br/>');
 
         d3.select('#tooltip-midInfor').classed('hidden', false);
-
+        
 
 
 
@@ -2527,7 +2948,10 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
           })
           .on('mouseout', function (this: any) {
+            
             d3.select('#tooltip-mid').classed('hidden', true);
+            d3.select('#tooltip-midInfor').classed('hidden', true);
+
             var idString = "#" + this.id.toString()
             idString = String(idString)
             d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
@@ -2556,7 +2980,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // d3.selectAll(".country").remove()
 
         d3.select('#tooltip-mid').classed('hidden', true);
-
+        d3.select('#tooltip-midInfor').classed('hidden', true);
+        
         //South Korea
         // var projection = d3.geoMercator().fitSize([width, height], worldmapPath.features[40]);
         var projection = d3.geoMercator().fitSize([width, height], worldmapPath);
@@ -2564,7 +2989,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         var path = d3.geoPath().projection(projection);
 
-        var warCount = 1828;
+        // var warCount = 1828;
 
 
 
@@ -2590,6 +3015,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .attr("id", function (d: any) {
             // console.log(d);
             //country name
+            allCCodeOnmap.push(d.properties.A3)
             return d.properties.A3
           })
           .attr("class", "country")
@@ -2631,7 +3057,10 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
           })
           .on('mouseout', function (this: any) {
+            
             d3.select('#tooltip-mid').classed('hidden', true);
+            d3.select('#tooltip-midInfor').classed('hidden', true);
+
             var idString = "#" + this.id.toString()
             idString = String(idString)
             d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
@@ -2768,6 +3197,138 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
       }
 
+      function drawCountrywithTrade(data:any)
+      {
+
+      }
+
+      function drawWarsVer2withTrade(data: any) {
+
+        // console.log(data)
+        var cirId = 1;
+        var couNaId = 1;
+        var areaId = 1;
+        // console.log(data)
+        // war Curve
+        refixcoID = []
+        // console.log("draw color coutriy!!@#")
+        // console.log(data)
+
+        // d3.select("#USA").attr("fill", "steelblue");
+        var wars = svg.selectAll(".warDyadicEach")
+          .data(data)
+
+        wars.attr("class", "warDyadicEach")
+          .attr("fill", function (d: any) {
+
+            // console.log("hello!")
+            // var te=data.statea.toString()
+            // console.log("hELLO")
+            // console.log("inside")
+            // console.log(d)
+            var coun = '#' + d.stateAbbA.toString()
+
+
+            refixcoID.push(coun)
+
+            // console.log(refixcoID)
+
+
+            d3.select(coun).attr("fill", "steelblue");
+            // var idString = "#" + this.id.toString();  
+            // idString = String(idString)
+            // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+            // d3.select(idString).attr("fill", "steelblue");
+            return "steelblue"
+
+          })
+
+        // console.log("refix")
+        // console.log(refixcoID)
+
+        wars.enter()
+          .append("path")
+          .attr("class", "warDyadicPath")
+          .attr("fill", function (this: any, d: any) {
+
+            // var te=dataS.statea.toString()
+            // console.log("dataS")
+            // console.log(d.stateAbbA)
+            // console.log("hello!")
+
+            // console.log("inside")
+            // console.log(d)
+            var coun = '#' + d.stateAbbA.toString()
+            if (coun == '#AUH') {
+              d3.select("#AUS").attr("fill", "steelblue");
+              // HUN
+              d3.select("#HUN").attr("fill", "steelblue");
+            }
+
+            if (coun == '#YUG') {
+              d3.select("#AUS").attr("fill", "steelblue");
+              // HUN
+              d3.select("#HUN").attr("fill", "steelblue");
+            }
+
+            d3.select(coun).attr("fill", "steelblue");
+
+            refixcoID.push(coun)
+
+            // console.log(refixcoID)
+            // console.log(d)
+            // var idString = "#" + this.id.toString();
+            // idString = String(idString)
+            // d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+            // d3.select(idString).attr("fill", "steelblue");
+            return "steelblue"
+
+          });
+        // .on('mouseover', function (this: any, d: any) {
+        //   // console.log("I am on the text!!!!");
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString();
+        //   console.log("Here")
+        //   console.log(idString)
+
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
+        //   d3.select(idString).attr("fill", "steelblue")
+
+        //   d3.select(idString).attr("rX", String(d3.select(idString).attr("r")));
+        //   d3.select(idString).attr("r", "5")
+        // })
+        // .on('mouseout', function (this: any) {
+        //   // console.log(this);
+        //   var idString = "#" + this.id.toString()
+        //   idString = String(idString)
+        //   d3.select(idString).attr("fill", String(d3.select(idString).attr("fillX")));
+        //   d3.select(idString).attr("r", String(d3.select(idString).attr("rX")));
+
+        // });
+
+
+
+        // EXIT.
+        wars.exit()
+          // .transition()
+          // .duration(750)
+          .style("opacity", 0)
+          .remove();
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
 
 
       // Modify to present trade flow
