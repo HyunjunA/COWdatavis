@@ -36,7 +36,8 @@ export class PiechartComponent implements OnInit {
       g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
     // var color = d3.scaleOrdinal(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00","#900bc5","#43cbc5","#f05d56"]);
     // var color = d3.scaleOrdinal(["#98abc5", "#8a89a6", "#6b486b", "#d0743c", "#ff8c00"]);
-    var color = d3.scaleOrdinal([d3.schemeCategory10[2],d3.schemeCategory10[3],d3.schemeCategory10[5],d3.schemeCategory10[4],d3.schemeCategory10[9]])
+    // var color = d3.scaleOrdinal([d3.schemeCategory10[2],d3.schemeCategory10[3],d3.schemeCategory10[5],d3.schemeCategory10[4],d3.schemeCategory10[9]])
+    var color = d3.scaleOrdinal([d3.schemeSet3[3],d3.schemeSet3[4]])
     var pie = d3.pie<any>() //pie generator
       .sort(null)
       .value(function (d: any) {
@@ -76,13 +77,13 @@ export class PiechartComponent implements OnInit {
         .attr("d", path)
         .attr("class", "pathLine")
         .attr("id", function (d: any) {
-          countryName.push(d.data.country); 
+          countryName.push(d.data.category); 
           countryName.sort()
           color.domain(countryName.sort());
           numPoints = numPoints + 1;
           return "pathLine1" + (numPoints + 1).toString();
         })
-        .attr("fill", function (d: any) { return color(d.data.value); }); //get data from node (select and $0.__data__ in console)
+        .attr("fill", function (d: any) { return color(d.data.value); }); //get data from node (select and 0.__data__ in console)
       arc.append("text") //for each slide use label path generator to place the text
         .attr("transform", function (d: any) {
           // console.log(label.centroid(d));
@@ -96,7 +97,7 @@ export class PiechartComponent implements OnInit {
           return "textonpie" + (numTexts + 1).toString();
         })
         .attr("dy", "0.35em")
-        .text(function (d: any) { return d.data.country; });
+        .text(function (d: any) { return d.data.category; });
 
 
       arc.selectAll(".pathLine")
@@ -111,9 +112,12 @@ export class PiechartComponent implements OnInit {
           d3.select('#card-subtitle2').html('');
 
           d3.select('#card-name-pie1').html("Information");
-          d3.select('#card-desc-pie1').html('Country: ' + d.data.country + '<br/>' +
-            'Expenditure: $' + d.data.value + ' bn<br/>');
+          
+          d3.select('#card-desc-pie1').html('category: ' + d.data.category + '<br/>' +
+            'Number of cases: ' + d.data.value + ' <br/>' + 
+            'Percentage: ' + d.data.per + ' <br/>');
           d3.select('#card-desc2-pie1').html('');
+          // d3.select('#card-subtitle2').html('');
           // d3.select('#card-desc').html('Expenditure: ' + d.data.value+ ' % of GDP<br/>');
         })
         .on('mouseout', function (this: any) {
@@ -126,8 +130,11 @@ export class PiechartComponent implements OnInit {
           d3.select('#card-subtitle2').html('How to interact with this pie chart');
 
           d3.select('#card-name-pie1').html('Generic Information');
-          d3.select('#card-desc-pie1').html(' This data is about military expenditure for the 5 countries. Some information is from <a href="https://en.wikipedia.org/wiki/Military_budget">this wikipedia</a>. U.S.A has the highest average. On the other hand, China has the lowest value among the 5 countries.');
-          d3.select('#card-desc2-pie1').html('By mouseovering the each pie, you can check information of each country.');
+          
+          d3.select('#card-desc-pie1').html('This data is about war records between two countries from 1823 to 2003. The data set is provided by <a href="http://www.correlatesofwar.org/">this the Correlates of War project</a>');
+          // d3.select('#card-desc-pie1').html(' This data is about military expenditure for the 5 countries. Some information is from <a href="https://en.wikipedia.org/wiki/Military_budget">this wikipedia</a>. U.S.A has the highest average. On the other hand, China has the lowest value among the 5 countries.');
+          
+          d3.select('#card-desc2-pie1').html('By mouseovering the each pie, you can check the percentage. If "Less than 0.1" represents that War outbreaks between two countries whose maximum value of trade dependency is less than 0.1');
         });
 
 
@@ -135,10 +142,10 @@ export class PiechartComponent implements OnInit {
 
       arc.selectAll(".textonpie")
         .on('mouseover', function (this: any, d: any) {
-          console.log("I am on the text!!!!");
+          // console.log("I am on the text!!!!");
           // console.log(this);
           var idString = "#" + this.id.toString();
-          console.log(idString);
+          // console.log(idString);
           idString = String(idString)
 
           d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
@@ -148,9 +155,11 @@ export class PiechartComponent implements OnInit {
           d3.select('#card-subtitle2').html('');
 
           d3.select('#card-name-pie1').html("Information");
-          d3.select('#card-desc-pie1').html('Country: ' + d.data.country + '<br/>' +
-            'Expenditure: $' + d.data.value + ' bn<br/>');
+          d3.select('#card-desc-pie1').html('category: ' + d.data.category + '<br/>' +
+            'Number of cases: ' + d.data.value + ' <br/>'+ 
+            'Percentage: ' + d.data.per + ' <br/>');
           d3.select('#card-desc2-pie1').html('');
+          // d3.select('#card-subtitle2').html('');
           // d3.select('#card-desc').html('Expenditure: ' + d.data.value+ ' % of GDP<br/>');
         })
         .on('mouseout', function (this: any) {
@@ -164,9 +173,10 @@ export class PiechartComponent implements OnInit {
 
           // d3.select('#tooltip-pie1').classed('hidden', true);
           d3.select('#card-name-pie1').html('Generic Information');
-          d3.select('#card-desc-pie1').html(' This data is about military expenditure for the 5 countries. Some information is from <a href="https://en.wikipedia.org/wiki/Military_budget">this wikipedia</a>. U.S.A has the highest expenditure. On the other hand, Germany has the lowest value among the 5 countries.');
+          d3.select('#card-desc-pie1').html('This data is about war records between two countries from 1823 to 2003. The data set is provided by <a href="http://www.correlatesofwar.org/">this the Correlates of War project</a>');
+          // d3.select('#card-desc-pie1').html(' This data is about military expenditure for the 5 countries. Some information is from <a href="https://en.wikipedia.org/wiki/Military_budget">this wikipedia</a>. U.S.A has the highest expenditure. On the other hand, Germany has the lowest value among the 5 countries.');
           // d3.select('#card-desc').html('5 countries.<br/><br/><br/>');
-          d3.select('#card-desc2-pie1').html('By mouseovering the each pie, you can check information of each country.');
+          d3.select('#card-desc2-pie1').html('By mouseovering the each pie, you can check the percentage. If "Less than 0.1" represents that War outbreaks between two countries whose maximum value of trade dependency is less than 0.1');
         });
 
 

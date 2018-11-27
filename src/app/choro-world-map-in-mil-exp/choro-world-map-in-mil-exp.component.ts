@@ -20,7 +20,7 @@ export class ChoroWorldMapInMilExpComponent implements OnInit {
 
 
     // var files = ["us.json", "us-state-centroids.json"];
-    var files = ["map.geojson", "MIDLOCA_2.0.csv"];
+    var files = ["map_COW.geojson", "MIDLOCA_2.0.csv"];
 
 
     var promises = [];

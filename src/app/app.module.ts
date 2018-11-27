@@ -13,6 +13,15 @@ import { MidsworldmapComponent } from './midsworldmap/midsworldmap.component';
 import { WarworldmapComponent } from './warworldmap/warworldmap.component';
 import { MidsWarsTradeInfWorldComponent } from './mids-wars-trade-inf-world/mids-wars-trade-inf-world.component';
 import { PiechartComponent } from './piechart/piechart.component';
+import { ScatterComponent } from './scatter/scatter.component';
+import { BubbleWarTradeComponent } from './bubble-war-trade/bubble-war-trade.component';
+import { BubbleformajorpowComponent } from './bubbleformajorpow/bubbleformajorpow.component';
+import { ChomapmilgdpComponent } from './chomapmilgdp/chomapmilgdp.component';
+import { PromapmilgdpComponent } from './promapmilgdp/promapmilgdp.component';
+import { LinemilgdpComponent } from './linemilgdp/linemilgdp.component';
+import { BarmilgdpComponent } from './barmilgdp/barmilgdp.component';
+import { ScatterSeComponent } from './scatter-se/scatter-se.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +36,16 @@ import { PiechartComponent } from './piechart/piechart.component';
     MidsworldmapComponent,
     WarworldmapComponent,
     MidsWarsTradeInfWorldComponent,
-    PiechartComponent
+    PiechartComponent,
+    ScatterComponent,
+    BubbleWarTradeComponent,
+    BubbleformajorpowComponent,
+    ChomapmilgdpComponent,
+    PromapmilgdpComponent,
+    LinemilgdpComponent,
+    BarmilgdpComponent,
+    ScatterSeComponent
+    
   ],
   imports: [
     BrowserModule
