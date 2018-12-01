@@ -36,15 +36,12 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1839,1556,Gulf of Mexico,Gulf of Mexico,-90.0659,25.3043
 1839,1740,"Pirara, Brazil","Pirara, Brazil",-61.15,3.05
 1840,1540,Douro River,Midpoint of river,-7.28269,41.1604
-1842,371,Unspecified,,,
-1842,2055,Unspecified,,,
 1842,2116,"Monterey, USA","Monterey, USA",-121.895,36.6002
 1843,1507,Magellan Straits,Magellan Straits,-70.8288,-53.7302
 1843,1552,United States (Texas [ADM1]),Centroid of ADM1,-99.358,31.4911
 1845,123,Argentina,Midpoint of coastline,-63.6589,-42.2343
 1845,1625,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
 1846,373,United States (Oregon [ADM1]),Midpoint of coastline,-124.076,44.7716
-1846,1498,Unspecified,,,
 1846,1586,"Corrientes, Argentina","Corrientes, Argentina",-58.8306,-27.4692
 1847,78,"Ferrara, Italy","Ferrara, Italy",11.6198,44.8381
 1848,19,AUH-Venetian Border,Midpoint of shared (national) border,11.97,46.83
@@ -64,7 +61,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1850,2012,Parana River,Midpoint of river,-53.8819,-23.4585
 1851,1528,"Montevideo, Uruguay","Montevideo, Uruguay",-56.1645,-34.9011
 1852,377,Dardanelles Strait,Dardanelles Strait,26.3013,40.0482
-1852,1506,Unspecified,,,
 1852,1523,Colombia-Peru Border,Midpoint of shared (national) border,-72.2277,-2.49887
 1852,1755,"Lobos Island, Peru","Lobos Island, Peru",-80.8599,-6.43756
 1853,57,Ottoman-Russia Border,Midpoint of shared (national) border,28.93,47.88
@@ -103,7 +99,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1860,113,Kingdom of Two Sicilies,Midpoint of Kingdom of Two Sicilies,40.34,15.94
 1860,306,"Rome, Italy","Rome, Italy",12.4964,41.9028
 1860,1549,"Veracruz, Mexico","Veracruz, Mexico",-96.1342,19.1738
-1860,1631,Unspecified,,,
 1860,2242,"Quito, Ecuador","Quito, Ecuador",-78.4678,-0.180653
 1861,135,"Veracruz, Mexico","Veracruz, Mexico",-96.1342,19.1738
 1861,225,Bahama Channel,Bahama Channel,-78.4003,22.7672
@@ -111,7 +106,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1861,1501,"Cobija, Bolivia","Cobija, Bolivia",-68.7811,-11.0344
 1862,1520,"Ibarra, Ecuador","Ibarra, Ecuador",-78.1222,0.339176
 1862,1589,"Humaita, Paraguay","Humaita, Paraguay",-58.5058,-27.0669
-1862,1595,Unspecified,,,
 1862,1762,"Rio de Janeiro, Brazil","Rio de Janeiro, Brazil",-43.1729,-22.9068
 1862,3245,China (Illi Kazakh Autonomous Prefecture [ADM2]),Centroid of ADM2,82.0989,43.4509
 1863,13,Japan Territorial Waters,Southernmost point of territorial waters,135.592,34.0405
@@ -187,7 +181,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1882,3725,Egypt,Centroid of ADM0,29.872,26.4943
 1883,65,Danube River,Midpoint of river,22.3676,44.6953
 1883,202,"Beijing, China","Beijing, China",116.407,39.9042
-1883,1517,Unspecified,,,
 1883,1683,"Ile de la Tortue, Haiti","Ile de la Tortue, Haiti",-72.7925,20.0549
 1884,1486,"Seoul, South Korea","Seoul, South Korea",126.978,37.5665
 1884,1515,Chile-Peru Border,Midpoint of shared (national) border,-69.7861,-18.0145
@@ -206,8 +199,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1887,1601,Rio Paraguay,"Asuncion, Paraguay",-57.5759,-25.2637
 1887,2369,France-Germany Border,Midpoint of shared (national) border,7.81941,49.0463
 1887,3136,Haiti Territorial Waters,Centroid of territorial waters,-73.2248,18.1112
-1888,191,Unspecified,,,
-1888,212,Unspecified,,,
 1888,1530,Haiti (Artibonite [ADM1] and Ouest [ADM1]),Centroid of > ADM1,-35.7504,23.9482
 1888,1739,Greece (Thessaly [ADM1]),Centroid of ADM1,22.5402,39.0728
 1889,9,Mozambique Territorial Waters,Centroid of territorial waters,36.9704,-18.1918
@@ -247,9 +238,7 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1898,309,China Territorial Waters,Centroid of territorial waters,120.175,25.5996
 1898,378,China (Illi Kazakh Autonomous Prefecture [ADM2]),Centroid of ADM2,82.0989,43.4509
 1898,379,"Kwangchow Wan, China","Kwangchow Wan, China",113.245,23.1448
-1898,391,Unspecified,,,
 1898,1557,"Havana, Cuba","Havana, Cuba",-82.3666,23.1136
-1898,2341,Unspecified,,,
 1899,131,North Korea-Russia Border (Territorial Waters),Midpoint of shared (territorial water) border,130.792,42.2199
 1899,237,Delagoa Bay,Delagoa Bay,32.7633,-26.0828
 1899,511,China (Zhejiang [ADM1]),Centroid of ADM1,120.089,29.1795
@@ -298,7 +287,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1908,1274,"Sofia, Bulgaria","Sofia, Bulgaria",23.3219,42.6977
 1909,95,"Port-au-Prince, Haiti","Port-au-Prince, Haiti",-72.3074,18.5944
 1909,1086,Morocco (Northern [> ADM 1]),Centroid of > ADM1,-5.2002,32.9735
-1909,1203,Unspecified,,,
 1909,1249,Karpathios and Crete Islands,Midpoint of shortest distance between islands,26.7164,35.3578
 1909,2078,Beagle Channel,Beagle Channel,-67.8349,-54.8899
 1909,2204,China (Jilin [ADM1]),Centroid of ADM1,126.194,43.6644
@@ -359,7 +347,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1914,3341,Bodensee Obersee,Bodensee Obersee,9.42491,47.5937
 1914,3343,Bulgaria-Greece Border,Midpoint of shared (national) border,24.8234,41.4042
 1914,3344,Greece-Turkey Border,Midpoint of shared (national) border,26.3871,41.2561
-1914,3351,Unspecified,,,
 1915,324,Greece (Crete [ADM1]),Centroid of ADM1,24.8447,35.2293
 1915,398,North Sea,North Sea,3.51563,56.511
 1915,1656,North Sea,North Sea,3.51563,56.511
@@ -378,18 +365,13 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1916,2205,"Zhengjiatun, Liaoning, China","Zhengjiatun, Liaoning, China",123.713,41.2889
 1916,2310,"Veracruz, Mexico","Veracruz, Mexico",-96.1342,19.1738
 1916,2648,"Corfu, Greece","Corfu, Greece",19.9217,39.6243
-1916,2733,Unspecified,,,
-1916,3348,Unspecified,,,
 1917,197,"Vladivostok, Russia","Vladivostok, Russia",131.887,43.1198
 1917,400,Brazil,Midpoint of coastline,-37.9329,-4.30799
-1917,521,Unspecified,,,
 1917,632,"Havana, Cuba","Havana, Cuba",-82.3666,23.1136
 1917,1142,"Harbin, China","Harbin, China",126.535,45.8038
 1917,1175,Motagua River,Midpoint of river,-89.4986,15.0868
 1917,1660,Sweden,Midpoint of coastline,17.7342,59.4494
 1917,1724,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
-1917,2649,Unspecified,,,
-1918,522,Unspecified,,,
 1918,1132,"Tehran, Iran","Tehran, Iran",51.389,35.6892
 1918,1182,Chaco Boreal,Chaco Boreal,-60,-23
 1918,1195,Honduras-Nicaragua Border,Midpoint of shared (subnational) border,-85.4934,14.082
@@ -402,8 +384,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1918,2363,"Yerevan, Armenia","Yerevan, Armenia",44.4991,40.1792
 1918,2603,Belarus-Lithuania Border,Midpoint of shared (national) border,25.7994,54.2536
 1918,2605,Estonia-Russia Border,Midpoint of shared (national) border,27.508,58.5314
-1918,2646,Unspecified,,,
-1918,2647,Unspecified,,,
 1918,3345,Turkey (Rize [ADM1] and Trabzon [ADM1]),Centroid of > ADM1,40.259,40.853
 1918,3346,Kaliningrad,Kaliningrad,20.4522,54.7104
 1919,230,Turkey (Antalya [ADM1]),Centroid of ADM1,30.9203,36.7984
@@ -438,7 +418,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1921,158,Costa Rica-Panama Border,Midpoint of shared (national) border,-82.7141,8.92902
 1921,612,"Batum, Georgia","Batum, Georgia",41.6367,41.6168
 1921,1233,Austria (Burgenland [ADM1]),Centroid of ADM1,16.5202,47.5415
-1921,1234,Unspecified,,,
 1921,1235,Albania (Northern [> ADM1]),Centroid of > ADM1,19.9127,42.1004
 1921,1273,"Upper Silesia, Poland","Upper Silesia, Poland",19.322,50.5717
 1921,1665,"Havana, Cuba","Havana, Cuba",-82.3666,23.1136
@@ -448,7 +427,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1921,3259,Russia (Tuva [ADM1]),Centroid of ADM1,94.793,51.5914
 1922,177,France-Germany Border,Midpoint of shared (national) border,7.81941,49.0463
 1922,328,"Istanbul, Turkey","Istanbul, Turkey",28.9784,41.0082
-1922,625,Unspecified,,,
 1922,1168,Honduras-Nicaragua Border,Midpoint of shared (national) border,-85.4934,14.082
 1922,1668,"Vladivostok, Russia","Vladivostok, Russia",131.887,43.1198
 1922,1779,Afghanistan-Russia Border,Midpoint of shared (national) border,68.8599,37.3324
@@ -468,18 +446,14 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1925,1781,Urta Toghai Island,Urta Toghai Island,69.5014,37.4986
 1925,2207,"Mukden, China","Mukden, China",123.431,41.8057
 1925,3183,Greece-Turkey Border,Midpoint of shared (national) border,26.3871,41.2561
-1925,3185,Unspecified,,,
 1926,151,"Bluefields, Nicaragua","Bluefields, Nicaragua",-83.7704,12.0111
 1926,1671,France-Italy Border,Midpoint of shared (national) border,6.94729,44.8695
-1926,1673,,,,
-1926,2208,Unspecified,,,
 1926,3184,Bulgaria-Romania Border,Midpoint of shared (national) border,25.4793,43.6402
 1926,3260,Manchuria,Manchuria,125.82,46.54
 1926,3362,"Radeke, Croatia","Radeke, Croatia",15.6883,44.1108
 1927,145,"Shanghai, China","Shanghai, China",121.474,31.2304
 1927,1025,Chaco Boreal,Chaco Boreal,-60,-23
 1927,1169,Guatemala-Honduras Border,Midpoint of shared (national) border,-88.9898,15.1322
-1927,1672,Unspecified,,,
 1927,1674,Manchuria,Manchuria,125.82,46.54
 1927,2132,Chaco Boreal,Chaco Boreal,-60,-23
 1927,2209,"Wuhan, China","Wuhan, China",114.306,30.5928
@@ -531,7 +505,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1937,157,"Beijing, China","Beijing, China",116.407,39.9042
 1937,336,Algeria Territorial Waters,Centroid of territorial waters,3.21438,36.9211
 1937,409,Amur River,Midpoint of river,132.169,47.6919
-1937,1825,Unspecified,,,
 1937,2125,Rio Zarumilla,Rio Zarumilla,-80.2307,-3.49514
 1937,2303,Cape Bizerte,Cape Bizerte,9.86389,37.3333
 1937,2304,Gibraltar Territorial Waters,Centroid of territorial waters,-5.2458,36.089
@@ -542,7 +515,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1938,11,Austria-Germany Border,Midpoint of shared (national) border,9.59932,47.5319
 1938,12,Czechoslovakia-Germany Border,Midpoint of shared (national) border,12.6784,50.4139
 1938,184,Tumen River,Midpoint of river,129.731,42.494
-1938,337,Unspecified,,,
 1938,410,Poland-Russia Border,Midpoint of shared (national) border,23.4462,52.5394
 1938,1029,Chaco Boreal,Chaco Boreal,-60,-23
 1938,1153,"Oriente Forest, Ecuador","Oriente Forest, Ecuador",-77.0104,-0.734
@@ -559,7 +531,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1939,183,"Khalkhin Gol, Russia","Khalkhin Gol, Russia",44.2097,46.3164
 1939,258,East Prussia-Poland Border,Midpoint of shared (national) border,21.627,54.398
 1939,503,Latvia-Russia Border,Midpoint of shared (national) border,27.7032,56.9124
-1939,620,Unspecified,,,
 1939,1154,"Oriente Forest, Ecuador","Oriente Forest, Ecuador",-77.0104,-0.734
 1939,1247,"Khust, Ukraine","Khust, Ukraine",23.2972,48.1735
 1939,1684,"Brenner Pass, Italy","Brenner Pass, Italy",11.5061,47.0018
@@ -590,7 +561,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1940,613,"Khemmarat, Thailand","Khemmarat, Thailand",105.149,15.9672
 1940,1749,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
 1940,1783,Germany-Switzerland Border,Midpoint of shared (national) border,9.52686,47.5564
-1940,3699,,,,
 1940,3704,"Josing Fjord, Norway","Josing Fjord, Norway",6.33467,58.3146
 1940,3706,Baltic Sea,Baltic Sea,19.8633,58.488
 1940,3707,"Roem Island, Denmark","Roem Island, Denmark",8.51387,55.1389
@@ -603,7 +573,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1940,3807,"Port Said, Egypt","Port Said, Egypt",32.3019,31.2653
 1940,3810,Gibraltar,Gibraltar,-5.35358,36.1408
 1940,3812,Adriatic Sea,Adriatic Sea,17.2903,41.8551
-1940,3813,Unspecified,,,
 1940,3814,Italy (Trieste [ADM2])-Yugoslavia,Midpoint of shared (subnational) border,13.8608,45.6897
 1940,3820,French Alps,French Alps,6.85275,45.8326
 1940,3821,"Bessarabia, Moldova","Bessarabia, Moldova",28.6959,48.0285
@@ -613,14 +582,12 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1940,3825,"Bucharest, Romania","Bucharest, Romania",26.1025,44.4268
 1940,3835,Spain Territorial Waters (Northern),Centroid of territorial waters,-5.67425,43.7252
 1940,3836,Gibraltar,Gibraltar,-5.35358,36.1408
-1940,3850,Unspecified,,,
 1940,3851,Sea of Marmara,Sea of Marmara,28.1123,40.6681
 1940,3852,"Haifa, Israel","Haifa, Israel",34.9896,32.794
 1940,3853,"Cairo, Egypt","Cairo, Egypt",31.2357,30.0444
 1940,3854,"Haifa, Israel","Haifa, Israel",34.9896,32.794
 1940,3855,Atlantic Ocean near W Africa and Spain,Atlantic Ocean near W Africa and Spain,-8,36
 1940,3856,Bulgaria-Greece Border,Midpoint of shared (national) border,24.8234,41.4042
-1940,3858,Unspecified,,,
 1940,3860,Hong Kong Island,Hong Kong Island,114.191,22.2588
 1940,3861,Czechoslovakia-Hungary Border,Midpoint of shared (national) border,19.5775,48.2207
 1940,3862,Mediterranean Sea,Mediterranean Sea,18.048,34.5531
@@ -629,20 +596,9 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1941,414,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
 1941,420,"Basra, Iraq","Basra, Iraq",47.7835,30.5081
 1941,421,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
-1941,518,Unspecified,,,
 1941,523,"Tehran, Iran","Tehran, Iran",51.389,35.6892
 1941,1066,Indian Ocean,Indian Ocean,81.8262,-33.1376
-1941,1614,Unspecified,,,
 1941,1785,"Bangkok, Thailand","Bangkok, Thailand",100.502,13.7563
-1941,3513,Unspecified,,,
-1941,3514,Unspecified,,,
-1941,3518,Unspecified,,,
-1941,3519,Unspecified,,,
-1941,3520,Unspecified,,,
-1941,3521,Unspecified,,,
-1941,3522,Unspecified,,,
-1941,3523,Unspecified,,,
-1941,3525,Unspecified,,,
 1941,3805,Baltic Sea,Baltic Sea,19.8633,58.488
 1941,3867,Falkland Islands,Falkland Islands,-59.5236,-51.7963
 1941,3868,"Sofia, Bulgaria","Sofia, Bulgaria",23.3219,42.6977
@@ -654,9 +610,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1942,1693,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
 1942,1694,Thailand,Centroid of ADM0,101.017,15.127
 1942,2124,"Isla Jambeli, Ecuador","Isla Jambeli, Ecuador",-80.0367,-3.25393
-1942,3503,Unspecified,,,
-1942,3524,Unspecified,,,
-1942,3527,Unspecified,,,
 1942,3721,Mediterranean Sea,Mediterranean Sea,18.048,34.5531
 1942,3806,Baltic Sea,Baltic Sea,19.8633,58.488
 1942,3875,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
@@ -665,8 +618,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1942,3881,Caribbean Sea,Caribbean Sea,-74.9676,14.5401
 1942,3882,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
 1942,3883,Atlantic Ocean,Atlantic Ocean,-28.6731,-14.5994
-1943,621,Unspecified,,,
-1943,622,Unspecified,,,
 1943,1058,"Bangkok, Thailand","Bangkok, Thailand",100.502,13.7563
 1943,1197,China-Mongolia Border,Midpoint of shared (national) border,106.683,42.263
 1943,1788,Germany-Switzerland Border,Midpoint of shared (national) border,9.52686,47.5564
@@ -674,9 +625,7 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1943,2123,"Cerro Verde, Ecuador","Cerro Verde, Ecuador",-80.2011,-4.12459
 1943,3263,China (Xinjiang [ADM1]),Centroid of ADM1,85.2036,41.112
 1943,3515,"Tehran, Iran","Tehran, Iran",51.389,35.6892
-1943,3516,Unspecified,,,
 1943,3517,"Bogota, Colombia","Bogota, Colombia",-74.0721,4.71099
-1943,3716,Unspecified,,,
 1943,3717,Italy (Central [> ADM1]),Centroid of > ADM1,12.3983,42.8294
 1943,3722,"Verkon Island, Sweden","Verkon Island, Sweden",14.3,63.1667
 1943,3884,Spain (Mediterranean) Territorial Waters,Centroid of Mediterranean territorial waters,-0.86883,37.4628
@@ -686,24 +635,15 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1944,614,"Ankara, Turkey","Ankara, Turkey",32.8597,39.9334
 1944,1695,"Budapest, Hungary","Budapest, Hungary",19.0402,47.4979
 1944,1790,"Budapest, Hungary","Budapest, Hungary",19.0402,47.4979
-1944,2581,,,,
 1944,3264,China (Xinjiang [ADM1]),Centroid of ADM1,85.2036,41.112
-1944,3526,Unspecified,,,
-1944,3826,Unspecified,,,
 1944,3827,"Sofia, Bulgaria","Sofia, Bulgaria",23.3219,42.6977
 1945,20,Iran (Northern [> ADM1]),Centroid of > ADM1,52.376,36.1117
 1945,252,Russia-Turkey Border,Midpoint of shared (national) border,43.5541,41.0004
 1945,2704,"Harbin, China","Harbin, China",126.535,45.8038
 1945,2725,Japan-Russia Border (Territorial Waters),Midpoint of shared (territorial water) border,142.007,45.7095
 1945,3506,"Brasilia, Brazil","Brasilia, Brazil",-47.8825,-15.7942
-1945,3507,Unspecified,,,
-1945,3508,Unspecified,,,
-1945,3509,Unspecified,,,
 1945,3510,"Santiago, Chile","Santiago, Chile",-70.6693,-33.4489
-1945,3511,Unspecified,,,
 1945,3512,"Tehran, Iran","Tehran, Iran",51.389,35.6892
-1945,3714,Unspecified,,,
-1945,3715,Unspecified,,,
 1946,4,Straits of Corfu,Straits of Corfu,19.97,39.77
 1946,603,"Tehran, Iran","Tehran, Iran",51.389,35.6892
 1946,1792,Gulf of Thailand,Gulf of Thailand,101.343,9.71212
@@ -720,7 +660,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1948,2020,Nahi Village,"Nahi, Iran",48.55,29.9667
 1948,2339,Costa Rica-Nicaragua Border,Midpoint of shared (national) border,-84.6307,11.0617
 1948,2340,Costa Rica-Nicaragua Border,Midpoint of shared (national) border,-84.6307,11.0617
-1948,2840,Unspecified,,,
 1949,604,Yemen (Aden [ADM1]),Centroid of ADM1,44.8088,12.8313
 1949,633,Taiwan Strait,Taiwan Strait,119.698,24.6581
 1949,634,"Beijing, China","Beijing, China",116.407,39.9042
@@ -763,7 +702,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1951,2180,Afghanistan-Pakistan Border,Midpoint of shared (national) border,69.227,31.8695
 1951,2991,Nei Lingding Island,Nei Lingding Island,113.812,22.4055
 1951,2992,Taiwan Strait,Taiwan Strait,119.698,24.6581
-1951,3195,Unspecified,,,
 1951,3199,Iran-Russia (Turkmenistan [ADM1]) Border,Midpoint of shared (subnational) border,57.9681,37.8529
 1951,3371,"Sinai, Egypt","Sinai, Egypt",34,29.5
 1951,3372,Gaza Strip,Gaza Strip,34.3088,31.3547
@@ -848,7 +786,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1956,606,"Budapest, Hungary","Budapest, Hungary",19.0402,47.4979
 1956,1214,Cambodia-South Vietnam Border (Territorial Waters),Midpoint of shared (territorial water) border,103.091,9.52125
 1956,1301,Rann of Kutch,Rann of Kutch,70.1456,24.0454
-1956,1452,Unspecified,,,
 1956,2092,Niti Pass,Niti Pass,79.8756,30.9667
 1956,2181,Afghanistan-Pakistan Border,Midpoint of shared (national) border,69.227,31.8695
 1956,2627,India (Punjab [ADM1]),Centroid of ADM1,75.4088,30.8415
@@ -901,7 +838,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1959,148,China-Nepal Border,Midpoint of shared (national) border,84.5921,28.7093
 1959,203,"Lang-Chiu, India","Lang-Chiu, India",93.55,28.6333
 1959,1100,Beagle Channel,Beagle Channel,-67.8349,-54.8899
-1959,1114,Unspecified,,,
 1959,1138,Shatt-al-Arab,Midpoint of river,48.0287,30.4622
 1959,1208,Apipe Grande Island,Apipe Grande Island,-56.8536,-27.5075
 1959,1369,Burma-Pakistan Border,Midpoint of shared (national) border,92.5799,21.2779
@@ -1068,7 +1004,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1966,1109,Saudi Arabia-North Yemen Border,Midpoint of shared (national) border,44.5422,17.3755
 1966,1166,Anacoco Island,Anacoco Island,-61.1436,6.72528
 1966,1322,Chad (Oaddai [ADM1])-Sudan Border,Midpoint of shared (subnational) border,22.2591,13.3246
-1966,1324,Unspecified,,,
 1966,1351,Guinea-Ivory Coast Border,Midpoint of shared (national) border,-7.67512,8.5036
 1966,1392,Angola-Zambia Border,Midpoint of shared (national) border,21.9969,-13.4962
 1966,1401,Caprivi Strip,Caprivi Strip,22.5689,-17.9802
@@ -1087,7 +1022,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1966,3171,Jordan-Syria Border,Midpoint of shared (national) border,37.2119,32.5325
 1966,3379,"Sinai, Egypt","Sinai, Egypt",34,29.5
 1966,3412,Israel-Syria Border,Midpoint of shared (national) border,35.6347,32.9833
-1967,345,Unspecified,,,
 1967,1067,"Jerusalem, Israel","Jerusalem, Israel",35.2137,31.7683
 1967,1115,Venezuela,Midpoint of coastline,-63.8722,10.6422
 1967,1217,Cambodia-South Vietnam Border,Midpoint of shared (national) border,106.041,11.774
@@ -1103,7 +1037,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1967,1805,Ecuador Territorial Waters,Centroid of territorial waters,-80.8282,-0.5294
 1967,2097,"Beijing, China","Beijing, China",116.407,39.9042
 1967,2710,"Dairen, China","Dairen, China",121.615,38.914
-1967,2930,Unspecified,,,
 1967,2931,Greece (Crete [ADM1]),Centroid of ADM1,24.8447,35.2293
 1967,2932,Baltic Sea,Baltic Sea,19.8633,58.488
 1967,2933,Shetland Islands,Shetland Islands,-1.26594,60.5297
@@ -1207,7 +1140,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1972,2638,Kashmir (Line of Control),Midpoint of Line of Control,74.4843,34.7874
 1972,2948,North Vietnam,Midpoint of coastline,104.094,19.2248
 1972,2949,Bering Sea,Bering Sea,-178.139,56.9073
-1973,353,Unspecified,,,
 1973,1043,"Sinai, Egypt","Sinai, Egypt",34,29.5
 1973,1105,Oman-South Yemen Border,Midpoint of shared (national) border,52.5582,17.8217
 1973,1119,Morocco,Midpoint of coastline,-8.34876,33.3276
@@ -1244,7 +1176,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1974,2713,Mongolia,Centroid of ADM0,103.083,46.8353
 1974,2951,"Guantanamo, Cuba","Guantanamo, Cuba",-75.2129,20.14
 1974,3174,"Jerusalem, Israel","Jerusalem, Israel",35.2137,31.7683
-1974,3217,Unspecified,,,
 1974,3227,Namibia-Zambia Border,Midpoint of shared (national) border,24.4249,-17.4801
 1974,3438,Golan Heights,Golan Heights,35.7844,33.0156
 1975,356,Cambodia Territorial Waters,Centroid of territorial waters,102.786,10.4762
@@ -1261,7 +1192,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1975,1428,"Ogaden, Ethiopia","Ogaden, Ethiopia",42.7994,9.35067
 1975,1430,Mozambique-Zimbabwe Border,Midpoint of shared (national) border,32.898,-18.5246
 1975,1435,"Phnom Penh, Cambodia","Phnom Penh, Cambodia",104.892,11.5449
-1975,1441,Unspecified,,,
 1975,1450,Indonesia (East Timor [ADM1]),Centroid of ADM1,125.852,-8.82025
 1975,1472,North Korea-South Korea Border,Midpoint of shared (national) border,127.507,38.3093
 1975,1613,Iraq-Kuwait Border,Midpoint of shared (national) border,47.0836,29.8809
@@ -1344,8 +1274,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1978,3005,"Lusaka, Zambia","Lusaka, Zambia",28.3228,-15.3875
 1978,3007,China-Vietnam Border,Midpoint of shared (national) border,105.201,23.2844
 1978,3009,Bolivia-Chile Border,Midpoint of shared (national) border,-68.7092,-20.3063
-1978,3010,,,,
-1978,3012,Unspecified,,,
 1978,3015,Botswana (Northern [> ADM1]),Centroid of > ADM1,24.8268,-20.5584
 1978,3440,"Beirut, Lebanon","Beirut, Lebanon",35.5018,33.8938
 1978,3604,"Nicosia, Cyprus","Nicosia, Cyprus",33.3823,35.1856
@@ -1376,7 +1304,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1980,2071,"Ogaden, Ethiopia","Ogaden, Ethiopia",42.7994,9.35067
 1980,2083,Beagle Channel,Beagle Channel,-67.8349,-54.8899
 1980,2152,Saudi Arabia-North Yemen Border,Midpoint of shared (national) border,44.5422,17.3755
-1980,2226,Unspecified,,,
 1980,2717,Argun River,Midpoint of river,120.053,51.5769
 1980,2969,"Dakar, Senegal","Dakar, Senegal",-17.366,14.7645
 1980,3016,Libya-Sudan Border,Midpoint of shared (national) border,24.6142,19.9997
@@ -1441,7 +1368,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1982,3076,Ghana-Togo Border,Midpoint of shared (national) border,0.393728,8.72793
 1982,3077,Falkland Islands,Falkland Islands,-59.5236,-51.7963
 1982,3078,"Kharg Island, Iran","Kharg Island, Iran",50.3121,29.2457
-1982,3079,Unspecified,,,
 1982,3082,Mekong River,Midpoint of river,105.871,14.6024
 1982,3083,Indonesia-Papua New Guinea Border,Midpoint of shared (national) border,141.006,-5.95494
 1982,3085,Guyana-Venezuela Border,Midpoint of shared (national) border,-60.4302,6.93136
@@ -1485,7 +1411,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1983,3540,Laos-Thailand Border,Midpoint of shared (national) border,102.671,17.8317
 1983,3614,China-Vietnam Border,Midpoint of shared (national) border,105.201,23.2844
 1983,3615,"Gotland, Sweden","Gotland, Sweden",18.4867,57.4684
-1983,3616,Unspecified,,,
 1983,3634,Chad-Libya Border,Midpoint of shared (national) border,19.4983,20.581
 1984,2074,"Ogaden, Ethiopia","Ogaden, Ethiopia",42.7994,9.35067
 1984,2087,Beagle Channel,Beagle Channel,-67.8349,-54.8899
@@ -1574,9 +1499,7 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1986,2578,Persian Gulf,Persian Gulf,51.6834,26.7505
 1986,2579,Burdwood Bank,Burdwood Bank,-59,-54.25
 1986,2580,"Gaborone, Botswana","Gaborone, Botswana",25.9231,-24.6282
-1986,2587,Unspecified,,,
 1986,2588,Persian Gulf,Persian Gulf,51.6834,26.7505
-1986,2589,Unspecified,,,
 1986,2591,Cyprus Territorial Waters,Southernmost point of territorial waters,33.0247,34.3614
 1986,2593,Persian Gulf,Persian Gulf,51.6834,26.7505
 1986,2594,Persian Gulf,Persian Gulf,51.6834,26.7505
@@ -1653,7 +1576,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1987,2828,Persian Gulf,Persian Gulf,51.6834,26.7505
 1987,2832,Persian Gulf,Persian Gulf,51.6834,26.7505
 1987,2833,Persian Gulf,Persian Gulf,51.6834,26.7505
-1987,2834,Unspecified,,,
 1987,3638,China-Vietnam Border,Midpoint of shared (national) border,105.201,23.2844
 1988,2745,Indonesia-Papua New Guinea Border,Midpoint of shared (national) border,141.006,-5.95494
 1988,2746,Spratly Islands,Spratly Islands,111.917,8.63333
@@ -1744,7 +1666,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1992,3559,"Sevastopol, Ukraine","Sevastopol, Ukraine",33.5254,44.6166
 1992,3560,Estonia (Ida-Viru [ADM1])-Russia Border,Midpoint of shared (subnational) border,28.1176,59.2973
 1992,3561,Georgia (Abkhazia [ADM1]),Centroid of ADM1,41.1815,43.1038
-1992,3563,Unspecified,,,
 1992,3564,Azerbaijan (Nagorno-Karabakh [> ADM1]),Centroid of > ADM1,46.7669,39.9003
 1992,3565,"Sao Domengis, Guinea Bissau","Sao Domengis, Guinea Bissau",-16.1963,12.4101
 1992,3566,Iran-Iraq Border,Midpoint of shared (national) border,45.6418,33.7638
@@ -1973,7 +1894,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 1999,4289,"Piranshahr, Iran","Piranshahr, Iran",45.1446,36.695
 1999,4292,"Azham, Iraq","Azham, Iraq",44.9443,34.055
 1999,4302,Guinea-Libera Border,Midpoint of shared (national) border,-9.40761,7.50678
-1999,4322,Unspecified,,,
 1999,4330,"Pigeon Reef, Spratly Islands","Pigeon Reef, Spratly Islands",114.637,8.86734
 1999,4334,Macedonia-Yugoslavia (Kosovo [> ADM1]) Border,Midpoint of shared (subnational) border,21.0274,42.1559
 1999,4335,Norway Territorial Waters,Centroid of territorial waters,11.0058,65.7203
@@ -1989,7 +1909,6 @@ year,dispnum,midloc2_location,midloc2_measuringpoint,midloc2_xlongitude,midloc2_
 2000,4210,Aegean Sea,Aegean Sea,25.2686,39.0192
 2000,4213,Gulf of Oman,Gulf of Oman,58.7374,24.7143
 2000,4214,Equatorial Guinea Territorial Waters,Centroid of mainland territorial waters,9.47262,1.53207
-2000,4218,Unspecified,,,
 2000,4220,Sea of Japan,Sea of Japan,135,38.8488
 2000,4221,Armenia-Turkey Border,Midpoint of shared (national) border,43.6501,40.1234
 2000,4222,"Hokkaido Island, Japan","Hokkaido Island, Japan",142.552,43.3857
