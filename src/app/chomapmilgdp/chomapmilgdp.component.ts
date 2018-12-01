@@ -20,8 +20,8 @@ export class ChomapmilgdpComponent implements OnInit {
 
 
     // var files = ["us.json", "us-state-centroids.json"];
+    // var files = ["map_COW.geojson", "MilRealExpend(a9)2017.json"];
     var files = ["map_COW.geojson", "MilRealExpend(a9)2017.json"];
-
 
     var promises = [];
 
@@ -41,7 +41,7 @@ export class ChomapmilgdpComponent implements OnInit {
       // console.log(i)
       microCo.push(colFleg(i))
       i = i + intervCol;
-      console.log(i)
+      // console.log(i)
     }
 
     var legend = svg.selectAll(".rect")
@@ -115,7 +115,7 @@ export class ChomapmilgdpComponent implements OnInit {
         .attr("id", function (d: any) {
           // console.log(d.properties.A3);
           //country name
-          return d.properties.A3
+          return d.properties.A3+"map1"
         })
         .attr("stroke", "gray")
         .attr("d", path);
@@ -131,7 +131,7 @@ export class ChomapmilgdpComponent implements OnInit {
         var c = colF(d)
         // var c = colF(0.35)
         // console.log(c)
-        var ID = "#" + expMilCountries[i].country
+        var ID = "#" + expMilCountries[i].country+"map1"
         svg.select(ID)
           .style("fill", c);
       }

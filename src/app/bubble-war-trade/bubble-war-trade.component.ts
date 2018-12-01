@@ -33,7 +33,7 @@ export class BubbleWarTradeComponent implements OnInit {
       // console.log(data)
       // d3.json("MIL10YearAver(A8)Ver2.json").then(function (data) {
       d3.select('#tooltip-bubwt1').classed('hidden', true);
-
+      
       // console.log(data.name);
 
       var svg = d3.select("#bubwtbleChart1Div").append("svg")
@@ -67,6 +67,9 @@ export class BubbleWarTradeComponent implements OnInit {
           color.domain(countryName.sort());
           return d.r;
         }).style("fill", function (d: any) {
+
+          // console.log(color(d.data.className))
+
           return color(d.data.className);
   
           // return color(d.data); 

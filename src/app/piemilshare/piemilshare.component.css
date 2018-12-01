@@ -40,7 +40,7 @@
 text.name,
 #tooltip {
     position: absolute;
-    width: auto;
+    width: 280px;
     height: auto;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -58,7 +58,24 @@ text.name,
 }
 
 
+#tooltip-pie1 {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
 
+#tooltip-pie1.hidden {
+    display: none;
+}
 
 #graph {
     width: 100%;
@@ -104,35 +121,15 @@ text.name {
     width: 20rem;
 }
 
+.card-pie1{
+    width: 20rem;
+}
 
 
 .und-col{
     min-height: 600px !important;
 }
                     
-#tooltip-bubwt1 {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-}
-
-#tooltip-bubwt1.hidden {
-    display: none;
-}
-
-
-.card-bub1{
-    width: 18rem;
-}
 
 
 
@@ -142,3 +139,10 @@ text.name {
 
 
 
+
+/* path.line1:hover{
+    fill:green;
+    stroke:black;
+    stroke-dasharray:5,5;
+    stroke-width: 10px;
+} */

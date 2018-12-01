@@ -10,19 +10,24 @@
 
 
 
-                <div id="worldChorInnerContainer" class="container">
+                <div id="worldChorInnerContainerMilShare" class="container">
                     <!-- <h3 id="worldChorChartHead">The share of world military expenditure (%) using Chorepleth Map</h3> -->
-                    <h3 id="worldChorChartHead">The share of world military expenditure (%)</h3>
-                    <h4> In 2017</h4>
-                    <ul class="nav nav-pills mb-3" id="pills-tab-chomilgdp" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="pills-mids-tab-chomilgdp" data-toggle="pill" href="#pills-mids"
-                                role="tab" aria-controls="pills-mids" aria-selected="true">Chorepleth Map</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="pills-wars-tab-chomilgdp" data-toggle="pill" href="#pills-wars"
-                                role="tab" aria-controls="pills-wars" aria-selected="false">Proportional Map</a>
-                        </li>
+                    <h3 id="worldChorChartHeadMilShare">The top 10 Military Spenders In 2017</h3>
+                    <!-- <h4> In 2016</h4> -->
+                    <svg id="worldProp" width="1000" height="600" style="background-color: white"></svg>
+
+
+
+                    
+                    <!-- <ul class="nav nav-pills mb-3" id="pills-tab-chomilgdpMilShare" role="tablist"> -->
+                        <!-- <li class="nav-item"> -->
+                            <!-- <a class="nav-link active" id="pills-mids-tab-chomilgdpMilShare" data-toggle="pill" href="#pills-midsMilShare" -->
+                                <!-- role="tab" aria-controls="pills-midsMilShare" aria-selected="true">Chorepleth Map</a> -->
+                        <!-- </li> -->
+                        <!-- <li class="nav-item"> -->
+                            <!-- <a class="nav-link" id="pills-wars-tab-chomilgdpMilShare" data-toggle="pill" href="#pills-warsMilShare" -->
+                                <!-- role="tab" aria-controls="pills-wars" aria-selected="false">Proportional Map</a> -->
+                        <!-- </li> -->
                         <!-- <li class="nav-item">
                                 <a class="nav-link" id="pills-trade-tab-chomilgdp" data-toggle="pill" href="#pills-trade" role="tab"
                                     aria-controls="pills-trade" aria-selected="false">Trade</a>
@@ -31,16 +36,16 @@
                                 <a class="nav-link" id="pills-temp-tab" data-toggle="pill" href="#pills-temp" role="tab" aria-controls="pills-temp" aria-selected="false">temp</a>
                             </li> -->
                         <!-- <button class="btn btn-default" id="pills-temp-tab">Reset Map</button> -->
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-mids" role="tabpanel" aria-labelledby="pills-mids-tab-chomilgdp">
+                    <!-- </ul> -->
+                    <!-- <div class="tab-content" id="pills-tabContentMilShare"> -->
+                        <!-- <div class="tab-pane fade show active" id="pills-midsMilShare" role="tabpanel" aria-labelledby="pills-mids-tab-chomilgdpMilShare"> -->
                             <!-- <div id="chomilgdp"></div> -->
-                            <svg id="worldChor" width="1000" height="600" style="background-color: white"></svg>
-                        </div>
-                        <div class="tab-pane fade" id="pills-wars" role="tabpanel" aria-labelledby="pills-wars-tab-chomilgdp">
+                            <!-- <svg id="worldChor" width="1000" height="600" style="background-color: white"></svg> -->
+                        <!-- </div> -->
+                        <!-- <div class="tab-pane fade" id="pills-warsMilShare" role="tabpanel" aria-labelledby="pills-wars-tab-chomilgdpMilShare"> -->
                             <!-- <div id="promilgdp"></div> -->
-                            <svg id="worldProp" width="1000" height="600" style="background-color: white"></svg>
-                        </div>
+                            <!-- <svg id="worldProp" width="1000" height="600" style="background-color: white"></svg> -->
+                        <!-- </div> -->
                         <!-- <div class="tab-pane fade" id="pills-trade" role="tabpanel" aria-labelledby="pills-trade-tab-chomilgdp">
                                 <div id="barchartTrades"></div>
                             </div> -->
@@ -48,7 +53,7 @@
                                 <div id="barchartMIDs"></div>
                             </div> -->
 
-                    </div>
+                    <!-- </div> -->
                     <!-- <svg id="worldChor" width="1000" height="600" style="background-color: white"></svg> -->
 
 

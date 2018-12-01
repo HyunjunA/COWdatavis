@@ -42,7 +42,7 @@ export class LinemilgdpComponent implements OnInit {
 
         // console.log(data);
         // a = i * 90;
-        var b = i + 2007;
+        var b = i + 2008;
         // console.log(a)
         // console.log(x(b));
         return x(b);
@@ -78,8 +78,9 @@ export class LinemilgdpComponent implements OnInit {
 
 
     // console.log("!!!!!!!!!!")
-    d3.json("Mil10YearFrom2007To2018(a8).json").then(function (data: any) {
-
+    // Mil10GDPFrom2007To2017.json
+    // d3.json("Mil10YearFrom2007To2018(a8).json").then(function (data: any) {
+    d3.json("Mil10GDPFrom2008To2017.json").then(function (data: any) {  
       // console.log(data);
       // console.log(data[i].country);
 
@@ -118,7 +119,7 @@ export class LinemilgdpComponent implements OnInit {
       svg.append("g")
         // .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
+        .call(d3.axisBottom(x).tickFormat(d3.format("d")))
         .attr("x", 6)
         .append("text")
         .attr("fill", "#000")
@@ -196,7 +197,7 @@ export class LinemilgdpComponent implements OnInit {
         .attr("class", "dot1")
         .attr("r", 3)
         .attr("cx", function (d: any, i) {
-          var b = i + 2007;
+          var b = i + 2008;
           return x(b);
         })
         .attr("cy", function (d: any, i) {

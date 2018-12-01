@@ -44,7 +44,8 @@ export class BarmilgdpComponent implements OnInit {
 
     var transition;
 
-    d3.json("MILoneYear(A7)Ver2.json").then(function (data) {
+    // d3.json("MILoneYear(A7)Ver2.json").then(function (data) {
+    d3.json("MILGDP2017.json").then(function (data) {
       dataset = data;
       dataset.sort(function (a, b) { return d3.ascending(a.country, b.country); });
       setMode("#alpha");
@@ -56,6 +57,8 @@ export class BarmilgdpComponent implements OnInit {
 
     });
 
+    // d3.select(window).on('resize', resize);
+    // resize()
 
     d3.select("#res")
       .on("click", function () {
@@ -88,18 +91,22 @@ export class BarmilgdpComponent implements OnInit {
         redrawbars(datasetCop);
 
       });
+    
 
+
+    // d3.select(window).on('resize', resize);
+    // resize()
 
 
     d3.select("#all")
       .on("click", function () {
-        console.log("all")
+        // console.log("all")
 
         titleFirst = "The 10 countries"
 
         setNumCouMode("#all")
 
-        console.log(mode)
+        // console.log(mode)
 
         datasetCop = dataset.slice(0)
 
@@ -643,7 +650,8 @@ export class BarmilgdpComponent implements OnInit {
       });
 
 
-
+    // d3.select(window).on('resize', resize);
+    // resize()
 
     function transitionAxis() {
 
@@ -688,15 +696,15 @@ export class BarmilgdpComponent implements OnInit {
 
 
 
-        svg.selectAll(".bar")
-        .attr("fill","rgb(2, 82, 109)")
+      svg.selectAll(".bar")
+        .attr("fill", "steelblue")
 
     }
 
     function transitionHeaderLowPart() {
       // console.log("transitionHeaderLowPart()")
       // newTitle = titleFirst + ' ' + titleSecond
-      var newTitleLowPart = "In 2016" + "-" + titleSort
+      var newTitleLowPart = "In 2017" + "-" + titleSort
 
 
       d3.select("#barChartHiHead")
@@ -718,11 +726,11 @@ export class BarmilgdpComponent implements OnInit {
         });
 
       svg.selectAll(".bar")
-      .attr("fill","rgb(2, 82, 109)")
+        .attr("fill", "steelblue")
 
     }
 
-    function redrawbars(dataset:any) {
+    function redrawbars(dataset: any) {
 
       //update scale
       console.log("hsfd")
@@ -731,7 +739,7 @@ export class BarmilgdpComponent implements OnInit {
       ////////////////////////////////
       // DATA JOIN FOR BARS.
       var bars = svg.selectAll(".bar")
-        .data(dataset, function (d:any) { return d.country; });
+        .data(dataset, function (d: any) { return d.country; });
 
       var delay = function (d, i) {
         return i * 50;
@@ -748,7 +756,7 @@ export class BarmilgdpComponent implements OnInit {
       bars.enter().append("rect")
         .attr("x", function (d) { return x(d.country); })
         .attr("y", function (d) { return y(d.value); })
-        .attr("fill","rgb(2, 82, 109)")
+        .attr("fill", "steelblue")
         .transition()
         .duration(1000)
         .attr("class", "bar")
@@ -756,7 +764,7 @@ export class BarmilgdpComponent implements OnInit {
         .attr("y", function (d) { return y(d.value); })
         .attr("width", x.bandwidth())
         .attr("height", function (d) { return height - y(d.value); })
-        .attr("fill","rgb(2, 82, 109)");
+        .attr("fill", "steelblue");
 
       // EXIT.
       bars.exit()
@@ -766,8 +774,8 @@ export class BarmilgdpComponent implements OnInit {
         .remove();
 
 
-        svg.selectAll(".bar")
-        .attr("fill","rgb(2, 82, 109)")
+      svg.selectAll(".bar")
+        .attr("fill", "steelblue")
 
     }
 
@@ -786,10 +794,10 @@ export class BarmilgdpComponent implements OnInit {
     }
 
     function setNumCouMode(id) {
-      d3.select("#res").style("background-color", "#FFFF66");
-      d3.select("#all").style("background-color", "#FFFF66");
-      d3.select("#top").style("background-color", "#FFFF66");
-      d3.select("#bot").style("background-color", "#FFFF66");
+      d3.select("#res").style("background-color", "lightblue");
+      d3.select("#all").style("background-color", "lightblue");
+      d3.select("#top").style("background-color", "lightblue");
+      d3.select("#bot").style("background-color", "lightblue");
 
       d3.select(id).style("background-color", "#FF3366");
       modeSortMet = id;
@@ -797,30 +805,30 @@ export class BarmilgdpComponent implements OnInit {
       // console.log(modeSortMet)
     }
 
-    function drawBars(dataset:any) {
-      
-      x.domain(dataset.map(function (d:any) { return d.country; }))
+    function drawBars(dataset: any) {
+
+      x.domain(dataset.map(function (d: any) { return d.country; }))
         .range([0, width])
         .paddingInner(0.05);
 
-      y.domain([0, d3.max(dataset, function (d:any) { return +d.value; })])
+      y.domain([0, d3.max(dataset, function (d: any) { return +d.value; })])
         .range([height, 0]);
 
       svg.selectAll(".bar")
-        .data(dataset, function (d:any) { return d.country; })
+        .data(dataset, function (d: any) { return d.country; })
         // svg.selectAll(".bar")
-        .attr("fill","rgb(2, 82, 109)")
+        .attr("fill", "steelblue")
         .enter().append("rect")
         .attr("class", "bar")
         .attr("x", function (d) { return x(d.country); })
         .attr("y", function (d) { return y(+d.value); })
         .attr("width", x.bandwidth())
         .attr("height", function (d) { return height - y(+d.value); })
-        .attr("fill","rgb(2, 82, 109)");
+        .attr("fill", "steelblue");
 
 
-      xAxis = d3.axisBottom(this)        
-              .scale(x)
+      xAxis = d3.axisBottom(this)
+        .scale(x)
 
 
       svg.append("g")
@@ -851,12 +859,69 @@ export class BarmilgdpComponent implements OnInit {
         .style("font-size", "0.7em");
 
 
-        svg.selectAll(".bar")
-        .attr("fill","rgb(2, 82, 109)")
+      svg.selectAll(".bar")
+        .attr("fill", "steelblue")
 
 
     }
 
+    function resize() {
+      console.log("resize here")
+
+      // var width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
+      // console.log("resize here")
+      // var height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+
+      // svg.attr('width', width)
+      //   .attr('height', height)
+
+      // var xScale = xScale.range([0, width]);
+      // var yScale = yScale.range([height, 0]).nice();
+
+      // svg.selectAll('.bar')
+      //   // .data(dataset, function (d: any) { return d.name; })  //UPDATE
+      //   .data(dataset, function (d: any) { return d.country;})
+      //   .attr('x', function (d) { return xScale(d.country); })
+      //   .attr('y', function (d) { return yScale(d.gravity); })
+      //   .attr('width', xScale.bandwidth())
+      //   .attr('height', function (d) { return height - yScale(d.gravity); });
+
+      // if (width < 550 || height < 90) {
+      //   svg.select('.x.axis').style('display', 'none');
+      //   svg.select('.y.axis').style('display', 'none');
+
+      //   svg.selectAll('.bar')
+      //     .data(dataset, function (d: any) { return d.country; })  //UPDATE
+      //     .attr('x', function (d: any) { return xScale(d.country) + xScale.bandwidth() / 2; })
+      //     .attr('y', function (d: any) { return height + 10; })
+      //     .style('display', 'initial');
+
+      //   svg.selectAll('.gravity')
+      //     .data(dataset, function (d: any) { return d.country; })  //UPDATE
+      //     .attr('x', function (d: any) { return xScale(d.country) + xScale.bandwidth() / 2; })
+      //     .attr('y', function (d: any) { return height + 20; })
+      //     .style('display', 'initial');
+      // } else {
+      //   yAxis.ticks(Math.max(height / 50, 2));  //one every 50 pixels
+      //   xAxis.ticks(Math.max(width / 50, 2));
+
+      //   svg.select('.x.axis')
+      //     .attr('transform', 'translate(0,' + height + ')')
+      //     .call(xAxis);
+
+      //   svg.select('.y.axis')
+      //     .call(yAxis);
+
+      //   svg.select('.x.axis').style('display', 'initial');
+      //   svg.select('.y.axis').style('display', 'initial');
+      //   svg.selectAll('.name').style('display', 'none');
+      //   svg.selectAll('.gravity').style('display', 'none');
+      // }
+
+
+
+
+    }
   }
 
 }

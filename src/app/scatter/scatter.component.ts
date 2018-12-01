@@ -21,7 +21,7 @@ export class ScatterComponent implements OnInit {
     //   height = +svg.attr("height");
 
     var files = [
-      "WarAndTrade_From1870.csv"
+      "WarAndTrade_From1900.csv"
     ];
 
 
@@ -113,7 +113,7 @@ export class ScatterComponent implements OnInit {
 
 
 
-      var margin = { top: 65, left: 50, bottom: 65, right: 50 };
+      var margin = { top: 65, left: 70, bottom: 65, right: 70 };
       var width = 1000 - margin.left - margin.right;
       var height = 600 - margin.top - margin.bottom;
       var numPoints = 0;
@@ -138,9 +138,10 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("text")
-        .attr("x", width / 2 - 100)
+        .attr("x", width / 2 - 200)
         .attr("y", height + 35)
-        .text("Total amount of international trade");
+        // .text("Total amount of international trade");
+        .text("Total amount of International Trade in US millions of current dollars");
 
       svg.append("text")
         .attr("x", -height / 2 - 90)
@@ -173,27 +174,28 @@ export class ScatterComponent implements OnInit {
       y.domain([0, 20])
         .range([height, 0]);
 
+      
 
       svg.append("rect")
         .attr("x", '0')
-        .attr("y", '525')
+        .attr("y", '523')
         .attr("width", '15')
         .attr("height", '10')
-        .attr("fill", "#66c2a4")
+        .attr("fill", "#f46d43")
         .attr('id', 'rgr1')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
           tempId = tempId.replace('r', '');
-          console.log(tempId)
+          // console.log(tempId)
           tempId = '.' + tempId
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
@@ -219,8 +221,8 @@ export class ScatterComponent implements OnInit {
 
       svg.append("text")
         .attr("x", '20')
-        .attr("y", '535')
-        .text("<1900")
+        .attr("y", '533')
+        .text("Before 1965")
         .attr('id', 'trgr1')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
@@ -230,30 +232,30 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
         .on("mouseout", function (this: any) {
           var tempId = this.id.toString()
           tempId = tempId.replace('tr', '');
-          console.log(tempId)
+          // console.log(tempId)
           tempId = '.' + tempId
 
           // d3.selectAll(tempId)
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -323,26 +325,26 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("rect")
-        .attr("x", '200')
-        .attr("y", '525')
+        .attr("x", '155')
+        .attr("y", '523')
         .attr("width", '15')
         .attr("height", '10')
-        .attr("fill", "#8c96c6")
+        .attr("fill", "#f768a1")
         .attr('id', 'rgr2')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
           tempId = tempId.replace('r', '');
-          console.log(tempId)
+          // console.log(tempId)
           tempId = '.' + tempId
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -356,13 +358,13 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
 
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -379,10 +381,11 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("text")
-        .attr("x", '220')
-        .attr("y", '535')
+        // .attr("x", '220')
+        .attr("x", '175')
+        .attr("y", '533')
         .attr('id', 'trgr2')
-        .text("1900 to 1965")
+        .text("1965 to 1980")
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
           tempId = tempId.replace('tr', '');
@@ -394,11 +397,11 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -412,11 +415,11 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -425,11 +428,11 @@ export class ScatterComponent implements OnInit {
 
         })
       svg.append("rect")
-        .attr("x", '400')
-        .attr("y", '525')
+        .attr("x", '335')
+        .attr("y", '523')
         .attr("width", '15')
         .attr("height", '10')
-        .attr("fill", "#7bccc4")
+        .attr("fill", "#3690c0")
         .attr('id', 'rgr3')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
@@ -442,12 +445,12 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -461,13 +464,13 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
 
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -480,14 +483,14 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("text")
-        .attr("x", '420')
-        .attr("y", '535')
+        .attr("x", '355')
+        .attr("y", '533')
         .attr('id', 'trgr3')
         .text("1965 to 1980")
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
           tempId = tempId.replace('tr', '');
-          console.log(tempId)
+          // console.log(tempId)
           tempId = '.' + tempId
 
           // String(d3.select(idString).attr("fill")
@@ -495,11 +498,11 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -513,7 +516,7 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
 
@@ -525,11 +528,11 @@ export class ScatterComponent implements OnInit {
         })
 
       svg.append("rect")
-        .attr("x", '600')
-        .attr("y", '525')
+        .attr("x", '533')
+        .attr("y", '523')
         .attr("width", '15')
         .attr("height", '10')
-        .attr("fill", "#74c476")
+        .attr("fill", "#66bd63")
         .attr('id', 'rgr4')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
@@ -542,11 +545,11 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
@@ -561,12 +564,12 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -580,8 +583,8 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("text")
-        .attr("x", '620')
-        .attr("y", '535')
+        .attr("x", '555')
+        .attr("y", '533')
         .attr('id', 'trgr4')
         .text("1980 to 1990")
         .on("mouseover", function (this: any) {
@@ -595,11 +598,11 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -613,11 +616,11 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
 
@@ -626,12 +629,16 @@ export class ScatterComponent implements OnInit {
 
         })
 
+
+
+
+
       svg.append("rect")
-        .attr("x", '800')
-        .attr("y", '525')
+        .attr("x", '735')
+        .attr("y", '523')
         .attr("width", '15')
         .attr("height", '10')
-        .attr("fill", "#ef3b2c")
+        .attr("fill", "#cb181d")
         .attr('id', 'rgr5')
         .on("mouseover", function (this: any) {
           var tempId = this.id.toString()
@@ -644,12 +651,12 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -663,11 +670,11 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
           // d3.selectAll(tempId)
@@ -679,8 +686,8 @@ export class ScatterComponent implements OnInit {
 
 
       svg.append("text")
-        .attr("x", '820')
-        .attr("y", '535')
+        .attr("x", '755')
+        .attr("y", '533')
         .attr('id', 'trgr5')
         .text("1990 to 2003")
         .on("mouseover", function (this: any) {
@@ -694,12 +701,12 @@ export class ScatterComponent implements OnInit {
 
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
         })
@@ -713,17 +720,23 @@ export class ScatterComponent implements OnInit {
           // .style('fill','#66c2a4')
 
           d3.selectAll(tempId)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","")
             .style("stroke-width", "0")
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             // .style("stroke","black")
             .style("stroke-width", "0")
           // d3.selectAll(tempId)
           // .style('border','1px')
 
         })
+
+
+
+
+
+        
 
 
 
@@ -757,27 +770,32 @@ export class ScatterComponent implements OnInit {
         .attr("class", function (data) {
 
           var cla;
-          if (+data['year'] < 1900) {
-            // cla = "B1900";
-            cla = "gr1";
-          }
+          // if (+data['year'] < 1900) {
+          //   // cla = "B1900";
+          //   cla = "gr1";
+          // }
 
-          if (+data['year'] >= 1900 && +data['year'] < 1965) {
+          if ( +data['year'] < 1965) {
             // cla = "1900To1965";
-            cla = "gr2";
+            cla = "gr1";
           }
 
           if (+data['year'] >= 1965 && +data['year'] < 1980) {
             // cla= "1965To1980";
-            cla = "gr3";
+            cla = "gr2";
           }
 
           if (+data['year'] >= 1980 && +data['year'] < 1990) {
             // cla = "1980To1990";
+            cla = "gr3";
+          }
+
+          if (+data['year'] >= 1990 && +data['year'] <= 1999) {
+            // cla = "1990To2003";
             cla = "gr4";
           }
 
-          if (+data['year'] >= 1990 && +data['year'] <= 2003) {
+          if (+data['year'] >= 2000 && +data['year'] <= 2003) {
             // cla = "1990To2003";
             cla = "gr5";
           }
@@ -787,24 +805,36 @@ export class ScatterComponent implements OnInit {
         .style("fill", function (data) {
 
           var color;
-          if (+data['year'] < 1900) {
-            color = "#66c2a4";
-          }
+          // if (+data['year'] < 1900) {
+          //   color = "#66c2a4";
+          // }
 
-          if (+data['year'] >= 1900 && +data['year'] < 1965) {
-            color = "#8c96c6";
+          if ( +data['year'] < 1965) {
+            color = "#f46d43";
           }
 
           if (+data['year'] >= 1965 && +data['year'] < 1980) {
-            color = "#7bccc4";
+            color = "#f768a1";
           }
 
           if (+data['year'] >= 1980 && +data['year'] < 1990) {
-            color = "#74c476";
+            // color = "#cb181d";
+            color = "#3690c0";
           }
 
-          if (+data['year'] >= 1990 && +data['year'] <= 2003) {
-            color = "#ef3b2c";
+          if (+data['year'] >= 1990 && +data['year'] <= 1999) {
+            color = "#66bd63";
+            // color = "#f46d43";
+          }
+
+          // if (+data['year'] >= 2000 && +data['year'] < 2000) {
+          //   // color = "#3690c0";
+          //   color = "#f46d43";
+          // }
+
+          if (+data['year'] >= 2000 ) {
+            // color = "#3690c0";
+            color = "#cb181d";
           }
 
           return color
@@ -834,7 +864,7 @@ export class ScatterComponent implements OnInit {
           d3.select('#tooltip-scatter1')
 
             .select('#planet-info-scatter1')
-            .html('<h4>' + 'Year: ' + d.year + '<br>' + " Countries at Wars: " + d.countCouWars + '<br>' + 'Total trade amount: ' + d.SumTrade + '<br>');
+            .html('<h4>' + 'Year: ' + d.year + '<br>' + " # of Countries at Wars: " + d.countCouWars + '<br>' + 'Total trade amount: ' + d.SumTrade + '<br>');
 
           d3.select('#tooltip-scatter1').classed('hidden', false);
 
@@ -842,7 +872,7 @@ export class ScatterComponent implements OnInit {
 
 
           d3.select(this)
-            // .style('fill','yellow')
+            // .style('fill','#f768a1')
             .style("stroke", "black")
             .style("stroke-width", "2")
 

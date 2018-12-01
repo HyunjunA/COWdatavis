@@ -23,6 +23,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
+      width=width-50
+      height=height-70
     // var files = [
     //   // "map.geojson",
     //   "map_COW.geojson",//values[0] map 
@@ -51,7 +53,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
       "MIDLOCA_2.0.csv",//values[1] MIDs
       "directed_dyadic_war_lati_long_stateName_allYear.csv",//values[2]
       "COW country codes_lati_long.csv",//values[3]
-      "Dyadic_COW_4.0_flow2_1870.json",//values[4] not used
+      "Dyadic_COW_4.0_flow2_1870.json",
       "MIDLOCA_2.0_groupbycountbyyearAllYearConti.csv",//values[5]
       "directed_dyadic_war_lati_long_stateNamecountbyyearAllVer3.csv",//values[6]
       "Dyadic_COW_4.0_Processed_WithCcode.csv", //trade dataset //values[7],
@@ -222,7 +224,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -238,7 +240,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -248,7 +250,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -264,7 +266,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -274,7 +276,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -291,7 +293,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -302,7 +304,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -321,7 +323,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -383,7 +385,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -399,7 +401,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -409,7 +411,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -425,7 +427,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -435,7 +437,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -452,7 +454,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -463,7 +465,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -482,7 +484,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -516,7 +518,8 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
           d3.selectAll(".mid").remove()
 
-          var newTitle = "International Trade"
+          var newTitle = "International Trade "
+          var sub  = "in US millions of current dollars"
           d3.select("#worldMidChartHead")
             .transition()
             .duration(300)
@@ -543,7 +546,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -559,7 +562,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -569,7 +572,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -585,7 +588,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 1)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -595,7 +598,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -612,7 +615,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -623,7 +626,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // .attr("right", "15px")
             // .attr("y", 400)
             .transition()
-            .duration(1000)
+            .duration(1)
             .style("color", "black")
             .on("start", function transitionHeaderIn() {
 
@@ -642,7 +645,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 .style("opacity", 0)
                 .style("color", "black")
                 .transition()
-                .delay(1000);
+                .duration(1);
             });
 
 
@@ -684,7 +687,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           // .attr("right", "15px")
           // .attr("y", 400)
           .transition()
-          .duration(1000)
+          .duration(1)
           .style("color", "black")
           .on("start", function transitionHeaderIn() {
 
@@ -700,7 +703,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               .style("opacity", 1)
               .style("color", "black")
               .transition()
-              .delay(1000);
+              .duration(1);
           });
 
 
@@ -735,7 +738,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           // .attr("right", "15px")
           // .attr("y", 400)
           .transition()
-          .duration(1000)
+          .duration(1)
           .style("color", "black")
           .on("start", function transitionHeaderIn() {
 
@@ -751,7 +754,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               .style("opacity", 1)
               .style("color", "black")
               .transition()
-              .delay(1000);
+              .duration(1);
           });
 
 
@@ -762,7 +765,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         //   // .attr("right", "15px")
         //   // .attr("y", 400)
         //   .transition()
-        //   .duration(1000)
+        //   .duration(1)
         //   .style("color", "black")
         //   .on("start", function transitionHeaderIn() {
 
@@ -778,7 +781,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         //       .style("opacity", 1)
         //       .style("color", "black")
         //       .transition()
-        //       .delay(1000);
+        //       .duration(1);
         //   });
 
 
@@ -786,9 +789,10 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
       function drawMIDSbars(dataset: any) {
-        var margin = { top: 20, left: 50, bottom: 50, right: 50 };
-        var widthMIDBar = 1100 - margin.left - margin.right;
-        var heightMIDBar = 200 - margin.top - margin.bottom;
+        // var margin = { top: 20, left: 50, bottom: 50, right: 50 };
+        var margin = { top: 20, left: 50, bottom: 20, right: 140 };
+        var widthMIDBar = 1200 - margin.left - margin.right;
+        var heightMIDBar = 120- margin.top - margin.bottom;
 
         var svgmidsBar = d3.select("#barchartMIDs").append("svg").attr("id", "midsBar")
           .attr('width', widthMIDBar + margin.left + margin.right)
@@ -847,7 +851,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         x.domain(dataset.map(function (d) { return +d.year; }))
           .range([0, widthMIDBar])
-          .paddingInner(0.15);
+          .paddingInner(0.3);
 
         y.domain([0, maxCountMids + 5])
           .range([heightMIDBar, 0]);
@@ -903,7 +907,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             d3.select("#WarMajorOnMap")
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -918,14 +922,14 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
             //Year of MIDs
             d3.select("#WarTitleOnMap")
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -940,14 +944,14 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
             // #of MIDs
             d3.select("#WarYearOnMap")
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -959,12 +963,12 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 d3.select("#WarYearOnMap")
                   .style("opacity", 0)
                   // .text(String(selectedMIDYear))
-                  .text("#MIDs: " + MIDSelected[0].countmids)
+                  .text("# of MIDs: " + MIDSelected[0].countmids)
                   .transition(t)
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -973,7 +977,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             // #of MIDs
             d3.select("#forthInform")
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -987,10 +991,10 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .text(String(selectedMIDYear))
                   .text("Most disputed areas: " + continent)
                   .transition(t)
-                  .style("opacity", 1)
+                  .style("opacity", 0)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -1045,8 +1049,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
             prvMids = prvMids + 1
 
-          })
-          ;
+          });
 
         // .attr("class","midscountbar");
 
@@ -1084,7 +1087,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         var yAxis: any = d3.axisLeft(this)
           .scale(y)
-          .ticks(10, 'd');
+          .ticks(3, 'd');
 
         svgmidsBar.append("g")
           .attr("id", "y-axis")
@@ -1100,7 +1103,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .append("tspan").text("Expenditure(% of GDP)")
           // .append("tspan").text("-2")
           .style("baseline-shift", "super")
-          .style("font-size", "0.7em");
+          .style("font-size", "0.5em");
 
 
         //resize()
@@ -1111,9 +1114,9 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // var margin = { top: 20, left: 80, bottom: 50, right: 10 };
 
 
-        var margin = { top: 20, left: 50, bottom: 50, right: 50 };
-        var widthMIDBar = 1100 - margin.left - margin.right;
-        var heightMIDBar = 200 - margin.top - margin.bottom;
+        var margin = { top: 20, left: 50, bottom: 20, right: 140 };
+        var widthMIDBar = 1200 - margin.left - margin.right;
+        var heightMIDBar = 120 - margin.top - margin.bottom;
 
         var svgWarBar = d3.select("#barchartWars").append("svg").attr("id", "midsBar")
           .attr('width', widthMIDBar + margin.left + margin.right)
@@ -1135,11 +1138,13 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .text("Years");
 
           svgWarBar.append("text")
-          .attr("x", -heightMIDBar/2-73)
+          .attr("x", -heightMIDBar/2-60)
           .attr("y", -50)
           .attr("dy", ".75em")
           .attr("transform", "rotate(-90)")
-          .text("# of countries at wars");
+          // .text("# of countries at wars");
+          .text("# of countries at wars")
+          .style('font-size', '0.7em');
 
         // var mode = "#ascend";
         // var modeSortMet = "#all";
@@ -1165,7 +1170,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         x.domain(datasetWar.map(function (d) { return d.year; }))
           .range([0, widthMIDBar])
-          .paddingInner(0.15);
+          .paddingInner(0.3);
 
         y.domain([0, maxCountWars + 5])
           .range([heightMIDBar, 0]);
@@ -1186,7 +1191,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           // .attr("")
           .attr("width", x.bandwidth())
           .attr("height", function (d: any) { return heightMIDBar - y(d.countCouWars); })
-          .attr("fill", "steelblue")
+          .attr("fill", "rgb(196, 50, 50)")
           .on('mouseover', function (this: any, d: any) {
             // console.log("war")
             // console.log(d)
@@ -1294,7 +1299,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 //   // .attr("right", "15px")
                 //   // .attr("y", 400)
                 //   .transition()
-                //   .duration(1000)
+                //   .duration(1)
                 //   .style("fill", "red")
                 //   .on("start", function transitionHeaderIn() {
 
@@ -1310,7 +1315,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                 //       .style("opacity", 1)
                 //       .attr("fill", "red")
                 //       .transition()
-                //       .delay(1000);
+                //       .duration(1);
                 //   });
 
 
@@ -1332,7 +1337,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1348,7 +1353,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
 
                 testIn = testIn + 1
@@ -1364,7 +1369,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1382,7 +1387,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
 
 
@@ -1393,7 +1398,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1410,7 +1415,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
 
 
@@ -1420,7 +1425,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1436,7 +1441,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
 
 
@@ -1446,7 +1451,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1465,7 +1470,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
 
 
@@ -1480,7 +1485,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   // .attr("right", "15px")
                   // .attr("y", 400)
                   .transition()
-                  .duration(1000)
+                  .duration(1)
                   .style("color", "black")
                   .on("start", function transitionHeaderIn() {
 
@@ -1496,7 +1501,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                       .style("opacity", 1)
                       .style("color", "black")
                       .transition()
-                      .delay(1000);
+                      .duration(1);
                   });
               }
 
@@ -1531,7 +1536,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
             d3.select(idString).attr("fillX", String(d3.select(idString).attr("fill")));
-            d3.select(idString).attr("fill", "rgb(196, 50, 50)");
+            d3.select(idString).attr("fill", "steelblue");
 
 
             var temp = values[2].filter(x => x.year == String(yearString))
@@ -1647,7 +1652,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         var yAxis: any = d3.axisLeft(this)
           .scale(y)
-        .ticks(10, 'd');
+        .ticks(3, 'd');
 
         svgWarBar.append("g")
           .attr("id", "y-axis")
@@ -1663,14 +1668,14 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .append("tspan").text("Expenditure(% of GDP)")
           // .append("tspan").text("-2")
           .style("baseline-shift", "super")
-          .style("font-size", "0.7em");
+          .style("font-size", "0.5em");
       }
 
 
       function drawTRADEbars(datasetTrade: any) {
-        var margin = { top: 20, left: 50, bottom: 50, right: 50 };
-        var widthMIDBar = 1100 - margin.left - margin.right;
-        var heightMIDBar = 200 - margin.top - margin.bottom;
+        var margin = { top: 20, left: 50, bottom: 20, right: 140 };
+        var widthMIDBar = 1200 - margin.left - margin.right;
+        var heightMIDBar = 120 - margin.top - margin.bottom;
 
         var svgTradeBar = d3.select("#barchartTrades").append("svg").attr("id", "midsBar")
           .attr('width', widthMIDBar + margin.left + margin.right)
@@ -1700,11 +1705,25 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         .text("Years");
 
         svgTradeBar.append("text")
-        .attr("x", -heightMIDBar/2-90)
+        .attr("x", -heightMIDBar/2-60)
         .attr("y", -50)
         .attr("dy", ".75em")
         .attr("transform", "rotate(-90)")
-        .text("# of countries at trade");
+        // .text("# of countries at trade");
+        .text("# of countries at trade")
+        .style('font-size', '0.7em')
+
+
+
+        svgTradeBar.append("text")
+        .attr("x", -heightMIDBar/2-60)
+        .attr("y", -35)
+        .attr("dy", ".75em")
+        .attr("transform", "rotate(-90)")
+   
+        .text("in current US millions $")
+        .style('font-size', '0.6em')
+        // .text("font-size",'10px')
 
         var maxCountWars;
 
@@ -1720,7 +1739,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         x.domain(datasetTrade.map(function (d) { return d.year; }))
           .range([0, widthMIDBar])
-          .paddingInner(0.15);
+          .paddingInner(0.3);
 
         y.domain([0, +maxCountWars + 5])
           .range([heightMIDBar, 0]);
@@ -1890,7 +1909,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               // .attr("right", "15px")
               // .attr("y", 400)
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -1906,7 +1925,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -1919,7 +1938,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               // .attr("right", "15px")
               // .attr("y", 400)
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -1938,7 +1957,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -1949,7 +1968,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               // .attr("right", "15px")
               // .attr("y", 400)
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -1967,7 +1986,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -1980,7 +1999,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               // .attr("right", "15px")
               // .attr("y", 400)
               .transition()
-              .duration(1000)
+              .duration(1)
               .style("color", "black")
               .on("start", function transitionHeaderIn() {
 
@@ -2002,7 +2021,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
                   .style("opacity", 1)
                   .style("color", "black")
                   .transition()
-                  .delay(1000);
+                  .duration(1);
               });
 
 
@@ -2095,7 +2114,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
         var yAxis: any = d3.axisLeft(this)
           .scale(y)
-        .ticks(10, 'd');
+        .ticks(3, 'd');
 
         svgTradeBar.append("g")
           .attr("id", "y-axis")
@@ -2111,7 +2130,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .append("tspan").text("Expenditure(% of GDP)")
           // .append("tspan").text("-2")
           .style("baseline-shift", "super")
-          .style("font-size", "0.7em");
+          .style("font-size", "0.5em");
 
 
 
@@ -2332,7 +2351,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
           .attr("class", "mid")
           .transition()
-          .duration(1000)
+          .duration(1)
           .style("fill", "red")
           .on("start", function transitionHeaderIn() {
 
@@ -2348,7 +2367,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               .style("opacity", 1)
               .attr("fill", "red")
               .transition()
-              .delay(1000);
+              .duration(1);
           })
 
 
@@ -2369,7 +2388,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             return marker[1]
           })
           .transition()
-          .duration(1000)
+          .duration(1)
 
           .attr("id", function (d: any) {
             var tempId = "conflict" + String(d.dispnum)
@@ -2380,7 +2399,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           // .attr("fill", "white")
           .attr("class", "mid")
           .transition()
-          .duration(1000)
+          .duration(1)
           .style("fill", "red")
           .on("start", function transitionHeaderIn() {
 
@@ -2396,7 +2415,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
               .style("opacity", 1)
               .attr("fill", "red")
               .transition()
-              .delay(1000);
+              .duration(1);
           })
 
 
@@ -2404,7 +2423,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
 
 
           // .transition()
-          // .duration(1000)
+          // .duration(1)
           // .style("fill", "red")
           // .on("start", function transitionHeaderIn() {
 
@@ -2420,7 +2439,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           //     .style("opacity", 1)
           //     .attr("fill", "red")
           //     .transition()
-          //     .delay(1000);
+          //     .duration(1);
           // })
 
 
@@ -2478,7 +2497,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
           .duration(300)
 
           // .transition()
-          // .duration(1000)
+          // .duration(1)
 
 
 
@@ -2499,7 +2518,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         // // .attr("right", "15px")
         // // .attr("y", 400)
         // .transition()
-        // .duration(1000)
+        // .duration(1)
         // .style("fill", "red")
         // .on("start", function transitionHeaderIn() {
 
@@ -2515,7 +2534,7 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
         //     .style("opacity", 1)
         //     .attr("fill", "red")
         //     .transition()
-        //     .delay(1000);
+        //     .duration(1);
         // })
 
 
@@ -2578,23 +2597,23 @@ export class MidsWarsTradeInfWorldComponent implements OnInit {
             if (coun == '#AUH') {
 
               // console.log("here")
-              d3.select("#AUS").attr("fill", "steelblue");
+              d3.select("#AUS").attr("fill", "rgb(196, 50, 50)");
               // HUN
-              d3.select("#HUN").attr("fill", "steelblue");
+              d3.select("#HUN").attr("fill", "rgb(196, 50, 50)");
             }
 
             if (coun == '#YUG') {
               // console.log("here")
-              d3.select("#AUS").attr("fill", "steelblue");
+              d3.select("#AUS").attr("fill","rgb(196, 50, 50)");
               // HUN
-              d3.select("#HUN").attr("fill", "steelblue");
+              d3.select("#HUN").attr("fill", "rgb(196, 50, 50)");
             }
 
-            d3.select(coun).attr("fill", "steelblue");
+            d3.select(coun).attr("fill", "rgb(196, 50, 50)");
 
             refixcoID.push(coun)
 
-            return "steelblue"
+            return "rgb(196, 50, 50)"
 
           });
         // .on('mouseover', function (this: any, d: any) {

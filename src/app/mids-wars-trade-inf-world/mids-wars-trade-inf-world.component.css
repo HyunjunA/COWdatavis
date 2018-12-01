@@ -56,9 +56,9 @@ text {
     fill:green;
 }  */
 
-
-
-
+/* .btn-space {
+    margin-left: 20px;
+} */
 
 
 #graph {
@@ -68,7 +68,7 @@ text {
 }
 
 
-
+.RbtnMargin { margin-left: 5px; }
 
 
 .bar {
